@@ -1,0 +1,3854 @@
+# Blue0x API Examples
+
+## Account Operations
+
+### Delete Account Property
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=deleteAccountProperty&
+  recipient=BLX-7A48-47JL-T7LD-D5FS3&
+  property=testkey1&
+  secretPhrase=iWontTellYou&
+  feeNQT=100000000&
+  deadline=60
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "4ff58a03d056ee8a3fee89766bf8e4acd008c2147216...",
+  "transactionJSON": {
+    "senderPublicKey": "373522bcd8904f4707472e590cbb67976d40e7af...",
+    "signature": "26ed697fc82f3b15e6d2c972eff5b195445314aa4bacc8...",
+    "feeNQT": "100000000",
+    "type": 1,
+    "fullHash": "33f7edaec1034153f8e28a996b13b2b2665d0d0a3e4a194...",
+    "version": 1,
+    "phased": false,
+    "ecBlockId": "10023643060833833497",
+    "signatureHash": "4ff58a03d056ee8a3fee89766bf8e4acd008c21472...",
+    "attachment": {
+      "property": "940296349549404868",
+      "version.AccountPropertyDelete": 1
+    },
+    "senderRS": "BLX-7A48-47JL-T7LD-D5FS3",
+    "subtype": 11,
+    "amountNQT": "0",
+    "sender": "12745647715474645062",
+    "recipientRS": "BLX-7A48-47JL-T7LD-D5FS3",
+    "recipient": "12745647715474645062",
+    "ecBlockHeight": 754255,
+    "deadline": 60,
+    "transaction": "5999080309032613683",
+    "timestamp": 80189128,
+    "height": 2147483647
+  },
+  "unsignedTransactionBytes": "011bc896c7043c00373522bcd8904f4707472e590cbb67976d40e7af39650ea11c...",
+  "broadcasted": false,
+  "requestProcessingTime": 3,
+  "transactionBytes": "011bc896c7043c00373522bcd8904f4707472e590cbb67976d40e7af39650ea11cb2be5734...",
+  "fullHash": "33f7edaec1034153f8e28a996b13b2b2665d0d0a3e4a1942718aa480c6097cf6",
+  "transaction": "5999080309032613683"
+}
+```
+
+### Get Account
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getAccount&
+  account=BLX-4VNQ-RWZC-4WWQ-GVM8S
+```
+
+**Response:**
+
+```json
+{
+  "unconfirmedBalanceNQT": "2501162882344",
+  "effectiveBalanceNXT": 13983,
+  "lessorsInfo": [
+    {
+      "currentHeightTo": "341420",
+      "nextHeightFrom": "341420",
+      "effectiveBalanceNXT": "544525",
+      "nextLesseeRS": "BLX-7WVC-W7TJ-REQ2-4VDJD",
+      "currentLesseeRS": "BLX-7WVC-W7TJ-REQ2-4VDJD",
+      "currentHeightFrom": "308653",
+      "nextHeightTo": "374187"
+    }
+  ],
+  "currentLessee": "7114946486381367146",
+  "currentLeasingHeightTo": 281179,
+  "forgedBalanceNQT": "0",
+  "balanceNQT": "2501162882344",
+  "publicKey": "73080c6a224062660184f10ebb7fb431d4593...",
+  "requestProcessingTime": 2,
+  "assetBalances": [
+    {
+      "balanceQNT": "96651298",
+      "asset": "4551058913252105307"
+    }
+  ],
+  "guaranteedBalanceNQT": "1398383666344",
+  "unconfirmedAssetBalances": [
+    {
+      "unconfirmedBalanceQNT": "96651298",
+      "asset": "4551058913252105307"
+    }
+  ],
+  "currentLesseeRS": "BLX-TMVC-69YC-SJB4-8YCH7",
+  "accountRS": "BLX-4VNQ-RWZC-4WWQ-GVM8S",
+  "name": "mystical",
+  "account": "17013046603665206934",
+  "currentLeasingHeightFrom": 279739
+}
+```
+
+### Get Account Block Count
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getAccountBlockCount&
+  account=7114946486381367146
+```
+
+**Response:**
+
+```json
+{
+  "numberOfBlocks": 460,
+  "requestProcessingTime": 70
+}
+```
+
+### Get Account Block Ids
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getAccountBlockIds&
+  account=7114946486381367146&
+  lastIndex=5
+```
+
+**Response:**
+
+```json
+{
+  "blockIds": [
+    "6021945980475236545",
+    "11040962152457477526",
+    "1157648883168692101",
+    "9322994768555364845",
+    "12862636636638339558",
+    "11535040705139271493"
+  ],
+  "requestProcessingTime": 3
+}
+```
+
+### Get Account Blocks
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getAccountBlocks&
+  account=7114946486381367146&
+  lastIndex=0
+```
+
+**Response:**
+
+```json
+{
+  "blocks": [
+    {
+      "previousBlockHash": "bd8948556e968f1d532cd286a5dd8fde0159d7950467f1ed8fbf26a31d663e99",
+      "payloadLength": 386,
+      "totalAmountNQT": "0",
+      "generationSignature": "74138446cacdb30075492670f7e24fb839434818cb877bba174e37361fc899a1",
+      "generator": "7114946486381367146",
+      "generatorPublicKey": "dbc809e8237914f25add0d349ea16b2ac05cae6882d0a1782d23605af264d97a",
+      "baseTarget": "325377698",
+      "payloadHash": "32df67383f63b74f1331bbdb6f1be424c87a1e6423fc7091d81683481eb6c4ca",
+      "generatorRS": "BLX-TMVC-69YC-SJB4-8YCH7",
+      "nextBlock": "3553212706398858282",
+      "numberOfTransactions": 2,
+      "blockSignature": "d30e3f95d547fa922feb31303f877a345d0ad8c232778a4507adf9082b5df3...",
+      "transactions": ["1199750337785535382", "8975701802988160413"],
+      "version": 3,
+      "totalFeeNQT": "200000000",
+      "previousBlock": "2130086549390920125",
+      "block": "6021945980475236545",
+      "height": 278953,
+      "timestamp": 30130340
+    }
+  ],
+  "requestProcessingTime": 3
+}
+```
+
+### Get Account Id
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getAccountId&
+  secretPhrase=IWontTellYou
+```
+
+**Response:**
+
+```json
+{
+  "accountRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+  "publicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+  "requestProcessingTime": 2,
+  "account": "15323192282528158131"
+}
+```
+
+### Get Account Ledger
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getAccountLedger&
+  account=BLX-7A48-47JL-T7LD-D5FS3
+```
+
+**Response:**
+
+```json
+{
+  "entries": [
+    {
+      "change": "100",
+      "eventType": "CURRENCY`OFFER`EXPIRED",
+      "ledgerId": "532246",
+      "holding": "6112509426732269765",
+      "isTransactionEvent": true,
+      "balance": "90000",
+      "holdingType": "UNCONFIRMED`CURRENCY`BALANCE",
+      "accountRS": "BLX-7A48-47JL-T7LD-D5FS3",
+      "block": "2303344830040052747",
+      "event": "13236557417702245931",
+      "account": "12745647715474645062",
+      "height": 736757,
+      "timestamp": 78995635
+    }
+  ],
+  "requestProcessingTime": 1
+}
+```
+
+### Get Account Ledger Entry
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getAccountLedgerEntry&
+  ledgerId=532246
+```
+
+**Response:**
+
+```json
+{
+  "change": "100",
+  "eventType": "CURRENCY`OFFER`EXPIRED",
+  "requestProcessingTime": 1,
+  "ledgerId": "532246",
+  "holding": "6112509426732269765",
+  "isTransactionEvent": true,
+  "balance": "90000",
+  "holdingType": "UNCONFIRMED`CURRENCY`BALANCE",
+  "accountRS": "BLX-7A48-47JL-T7LD-D5FS3",
+  "block": "2303344830040052747",
+  "event": "13236557417702245931",
+  "account": "12745647715474645062",
+  "height": 736757,
+  "timestamp": 78995635
+}
+```
+
+### Get Account Lessors
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getAccountLessors&
+  account=7114946486381367146&
+  height=282497
+```
+
+**Response:**
+
+```json
+{
+  "lessors": [
+    {
+      "guaranteedBalanceNQT": "2643314085738687",
+      "lessorRS": "BLX-MRBN-8DFH-PFMK-A4DBM",
+      "lessor": "9918441724915080500"
+    }
+  ],
+  "accountRS": "BLX-TMVC-69YC-SJB4-8YCH7",
+  "requestProcessingTime": 1,
+  "account": "7114946486381367146",
+  "height": 282497
+}
+```
+
+### Get Account Properties
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getAccountProperties&
+  recipient=BLX-7A48-47JL-T7LD-D5FS3
+```
+
+**Response:**
+
+```json
+{
+  "recipientRS": "BLX-7A48-47JL-T7LD-D5FS3",
+  "recipient": "12745647715474645062",
+  "requestProcessingTime": 0,
+  "properties": [
+    {
+      "setterRS": "BLX-7A48-47JL-T7LD-D5FS3",
+      "property": "testkey1",
+      "setter": "12745647715474645062",
+      "value": "testvalue1"
+    }
+  ]
+}
+```
+
+### Get Account Public Key
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getAccountPublicKey&
+  account=BLX-L6FM-89WK-VK8P-FCRBB
+```
+
+**Response:**
+
+```json
+{
+  "publicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d...",
+  "requestProcessingTime": 36
+}
+```
+
+### Get Account Transaction Ids
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getAccountTransactionIds&
+  account=BLX-L6FM-89WK-VK8P-FCRBB
+```
+
+**Response:**
+
+```json
+{
+  "transactionIds": ["15200507403046301754", "10900022216391397990"],
+  "requestProcessingTime": 1
+}
+```
+
+### Get Balance
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getBalance&
+  account=7114946486381367146
+```
+
+**Response:**
+
+```json
+{
+  "unconfirmedBalanceNQT": "9246231058415",
+  "guaranteedBalanceNQT": "9242231058415",
+  "effectiveBalanceNXT": 92422,
+  "forgedBalanceNQT": "260560000000",
+  "balanceNQT": "9246231058415",
+  "requestProcessingTime": 1
+}
+```
+
+### Get Blockchain Transactions
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getBlockchainTransactions&
+  account=BLX-4VDY-LNVT-LMAY-FMCKA&
+  lastIndex=0
+```
+
+**Response:**
+
+```json
+{
+  "requestProcessingTime": 2,
+  "transactions": [
+    {
+      "signature": "0bc2045c2e4291e9595702fc6a9e805f11b65a88a867d515e44b980ef72b440a2...",
+      "transactionIndex": 0,
+      "type": 0,
+      "phased": false,
+      "ecBlockId": "441034190304176853",
+      "signatureHash": "31f92d5612115e174748c7a261cd0412e00028639301aae0f0c1ddfc7618b7e7",
+      "attachment": {
+        "version.OrdinaryPayment": 0
+      },
+      "senderRS": "BLX-4VDY-LNVT-LMAY-FMCKA",
+      "subtype": 0,
+      "amountNQT": "1400000000",
+      "recipientRS": "BLX-BMUV-8QQR-47VK-CR7F3",
+      "block": "6752144003309284467",
+      "blockTimestamp": 46567698,
+      "deadline": 1440,
+      "timestamp": 46567612,
+      "height": 291611,
+      "senderPublicKey": "10f09c34f225d425306e5be55a4946908156072afbead4d574a512d7e086ef5c",
+      "feeNQT": "100000000",
+      "confirmations": 2046,
+      "fullHash": "a26a2a36086e5d13f069dd9da06ce4e6b0418e9a299bec0cda39bfa04a2ca5e3",
+      "version": 1,
+      "sender": "15295723609781267838",
+      "recipient": "11580081983047651163",
+      "ecBlockHeight": 291600,
+      "transaction": "1395392441102264994"
+    }
+  ]
+}
+```
+
+### Get Guaranteed Balance
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getGuaranteedBalance&
+  account=7114946486381367146&
+  numberOfConfirmations=1440
+```
+
+**Response:**
+
+```json
+{
+  "guaranteedBalanceNQT": "9242231058415",
+  "requestProcessingTime": 0
+}
+```
+
+### Get Unconfirmed Transaction Ids
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getUnconfirmedTransactionIds&
+  account=BLX-L6FM-89WK-VK8P-FCRBB
+```
+
+**Response:**
+
+```json
+{
+  "requestProcessingTime": 1,
+  "unconfirmedTransactionIds": []
+}
+```
+
+### Get Unconfirmed Transactions
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getUnconfirmedTransactions&
+  account=BLX-L6FM-89WK-VK8P-FCRBB
+```
+
+**Response:**
+
+```json
+{
+  "unconfirmedTransactions": [],
+  "requestProcessingTime": 1
+}
+```
+
+### Search Accounts
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=searchAccounts&
+  query=testnet AND tyler
+```
+
+**Response:**
+
+```json
+{
+  "accounts": [
+    {
+      "accountRS": "BLX-7C4U-3Z9K-GZM8-CU8EJ",
+      "name": "Tyler Jordan",
+      "description": "testnet account",
+      "account": "12119426358687475802"
+    }
+  ],
+  "requestProcessingTime": 16
+}
+```
+
+### Send Money
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=sendMoney&
+  secretPhrase=IWontTellYou&
+  recipient=BLX-4VNQ-RWZC-4WWQ-GVM8S&
+  amountNQT=100000000&
+  feeNQT=100000000&
+  deadline=60
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "b35eae7d2f01639810d37694138aa0a86fbbf8a9bf58c2be4f2a5b8f0f30b3f7",
+  "unsignedTransactionBytes": "001046aac6013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "5f0378b7390ff5a815eadd1354de533eef682f139362b153576e2207320a6...",
+    "feeNQT": "100000000",
+    "type": 0,
+    "fullHash": "3a304584f20cf3d2cbbdd9698ff9a166427005ab98fbe9ca4ad6253651ee81f1",
+    "version": 1,
+    "ecBlockId": "17321329645912574173",
+    "signatureHash": "b35eae7d2f01639810d37694138aa0a86fbbf8a9bf58c2be4f2a5b8f0f30b3f7",
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 0,
+    "amountNQT": "100000000",
+    "sender": "15323192282528158131",
+    "recipientRS": "BLX-4VNQ-RWZC-4WWQ-GVM8S",
+    "recipient": "17013046603665206934",
+    "ecBlockHeight": 275727,
+    "deadline": 60,
+    "transaction": "15200507403046301754",
+    "timestamp": 29796934,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 8475,
+  "transactionBytes": "001046aac6013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143...",
+  "fullHash": "3a304584f20cf3d2cbbdd9698ff9a166427005ab98fbe9ca4ad6253651ee81f1",
+  "transaction": "15200507403046301754"
+}
+```
+
+### Set Account Info
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=setAccountInfo&
+  secretPhrase=IWontTellYou&
+  name=iwonttellyou
+  description=example account
+  feeNQT=100000000&
+  deadline=60
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "15917aafd59ad9cece7dfc127ab256711d1c58a8ed1a0dc7334949ca826d8a32",
+  "unsignedTransactionBytes": "0115dfeecb013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "3f5167a3a23677c85aba7fbbc8bc31cddf540a632abebee4a80fe08ba92b9a0...",
+    "feeNQT": "100000000",
+    "type": 1,
+    "fullHash": "2d31c26aa2b0ae4cf233cc4035c555bca0c579bdcef24bc9819132dc2ce5b2e5",
+    "version": 1,
+    "ecBlockId": "17558522603047297060",
+    "signatureHash": "15917aafd59ad9cece7dfc127ab256711d1c58a8ed1a0dc7334949ca826d8a32",
+    "attachment": {
+      "name": "iwonttellyou",
+      "description": "example account",
+      "version.AccountInfo": 1
+    },
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 5,
+    "amountNQT": "0",
+    "sender": "15323192282528158131",
+    "ecBlockHeight": 279080,
+    "deadline": 60,
+    "transaction": "5525548004452479277",
+    "timestamp": 30142175,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 8553,
+  "transactionBytes": "0115dfeecb013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "fullHash": "2d31c26aa2b0ae4cf233cc4035c555bca0c579bdcef24bc9819132dc2ce5b2e5",
+  "transaction": "5525548004452479277"
+}
+```
+
+### Set Account Property
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+requestType=setAccountProperty&
+secretPhrase=iwonttellyou&
+property=country&
+value=switzerland&
+recipient=BLX-EZQ9-35P5-XZ8C-4LW87&
+feeNQT=100000000&
+deadline=60
+```
+
+**Response:**
+
+```json
+{
+    "signatureHash": "34a690abc9f7fe4749da49d996e875e961aa0d38d6b80cdca9a01a7614004089",
+    "transactionJSON": {
+        "senderPublicKey": "b0db10704a831f1a0fd028e947784811e88fbe0fde25dc1f68209a2d9f93be13",
+        "signature": "f5fd4b881c5625c778ffe38bced33d44231eda406e95d9068dea69407ea3370dc873f52a123a0cbe590ecf4adf2a3c6238dc26c73ee63aeb7ac4331958b53a1e",
+        "feeNQT": "100000000",
+        "type": 1,
+        "fullHash": "d94baf764f0b7e47dbbe30c5aef1694fef6dfd2ecc7c86e29eefee7e6d1b2b39",
+        "version": 1,
+        "phased": false,
+        "ecBlockId": "1026208230615777523",
+        "signatureHash": "34a690abc9f7fe4749da49d996e875e961aa0d38d6b80cdca9a01a7614004089",
+        "attachment": {
+            "property": "\\"switzerland\\"",
+            "value": "\\"country\\"",
+            "version.AccountProperty": 1
+        },
+        "senderRS": "BLX-EZQ9-35P5-XZ8C-4LW87",
+        "subtype": 10,
+        "amountNQT": "0",
+        "sender": "2493747385666535111",
+        "recipientRS": "BLX-EZQ9-35P5-XZ8C-4LW87",
+        "recipient": "2493747385666535111",
+        "ecBlockHeight": 684730,
+        "deadline": 360,
+        "transaction": "5151567459679947737",
+        "timestamp": 72072027,
+        "height": 2147483647
+    },
+    "unsignedTransactionBytes": "011a5bbb4b046801b0db10704a831f1a0fd028e947784811e88fbe0fde25dc1f68209a2d9f93be13c77e36ea08929b22000000000000000000e1f5050000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ba720a00f3806fdbf2d23d0e010d22737769747a65726c616e64220922636f756e74727922",
+    "broadcasted": true,
+    "requestProcessingTime": 83,
+    "transactionBytes": "011a5bbb4b046801b0db10704a831f1a0fd028e947784811e88fbe0fde25dc1f68209a2d9f93be13c77e36ea08929b22000000000000000000e1f505000000000000000000000000000000000000000000000000000000000000000000000000f5fd4b881c5625c778ffe38bced33d44231eda406e95d9068dea69407ea3370dc873f52a123a0cbe590ecf4adf2a3c6238dc26c73ee63aeb7ac4331958b53a1e00000000ba720a00f3806fdbf2d23d0e010d22737769747a65726c616e64220922636f756e74727922",
+    "fullHash": "d94baf764f0b7e47dbbe30c5aef1694fef6dfd2ecc7c86e29eefee7e6d1b2b39",
+    "transaction": "5151567459679947737"
+
+```
+
+### Start Funding Monitor
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+ requestType=startFundingMonitor&
+ property=funding&
+ amount=1000000000&
+ threshold=15000000000&
+ interval=10&
+ secretPhrase=IWontTellYou
+```
+
+**Response:**
+
+```json
+{
+  "started": true,
+  "requestProcessingTime": 5
+}
+```
+
+### Stop Funding Monitor
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+ requestType=stopFundingMonitor&
+ property=funding&
+ secretPhrase=IWontTellYou
+```
+
+**Response:**
+
+```json
+{
+  "stopped": 1,
+  "requestProcessingTime": 5
+}
+```
+
+## Account Control Operations
+
+### Get All Phasing Only Controls
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getAllPhasingOnlyControls&
+  firstIndex=0&
+  lastIndex=1
+```
+
+**Response:**
+
+```json
+{
+  "phasingOnlyControls": [
+    {
+      "minDuration": 0,
+      "votingModel": 0,
+      "minBalance": "0",
+      "accountRS": "BLX-AVGK-SKJZ-583G-A689A",
+      "quorum": "2",
+      "maxFees": "0",
+      "whitelist": [
+        {
+          "whitelistedRS": "BLX-EVHD-5FLM-3NMQ-G46NR",
+          "whitelisted": "16992224448242675179"
+        },
+        {
+          "whitelistedRS": "BLX-XK4R-7VJU-6EQG-7R335",
+          "whitelisted": "5873880488492319831"
+        },
+        {
+          "whitelistedRS": "BLX-SZKV-J8TH-GSM9-9LKV6",
+          "whitelisted": "8245583500397018683"
+        }
+      ],
+      "minBalanceModel": 0,
+      "account": "9519700060090428881",
+      "maxDuration": 0
+    },
+    {
+      "minDuration": 10,
+      "votingModel": 0,
+      "minBalance": "0",
+      "accountRS": "BLX-VSTJ-MHZK-A6N3-CHRRH",
+      "quorum": "1",
+      "maxFees": "1000000000",
+      "whitelist": [
+        {
+          "whitelistedRS": "BLX-D5A2-7CCE-G35P-BB324",
+          "whitelisted": "10448396398360890624"
+        },
+        {
+          "whitelistedRS": "BLX-KGPY-DF8U-HSF9-GQ69A",
+          "whitelisted": "16437178058884561598"
+        }
+      ],
+      "minBalanceModel": 0,
+      "account": "12096369102442849072",
+      "maxDuration": 100
+    }
+  ],
+  "requestProcessingTime": 0
+}
+```
+
+### Get Phasing Only Control
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getPhasingOnlyControl&
+  account=BLX-AVGK-SKJZ-583G-A689A
+```
+
+**Response:**
+
+```json
+{
+  "minDuration": 0,
+  "votingModel": 0,
+  "minBalance": "0",
+  "accountRS": "BLX-AVGK-SKJZ-583G-A689A",
+  "quorum": "2",
+  "maxFees": "0",
+  "whitelist": [
+    {
+      "whitelistedRS": "BLX-EVHD-5FLM-3NMQ-G46NR",
+      "whitelisted": "16992224448242675179"
+    },
+    {
+      "whitelistedRS": "BLX-XK4R-7VJU-6EQG-7R335",
+      "whitelisted": "5873880488492319831"
+    },
+    {
+      "whitelistedRS": "BLX-SZKV-J8TH-GSM9-9LKV6",
+      "whitelisted": "8245583500397018683"
+    }
+  ],
+  "requestProcessingTime": 1,
+  "minBalanceModel": 0,
+  "account": "9519700060090428881",
+  "maxDuration": 0
+}
+```
+
+### Set Phasing Only Control
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+ requestType=setPhasingOnlyControl&
+ controlVotingModel=0&
+ controlQuorum=1&
+ controlWhitelisted=BLX-5MYN-AP7M-NKMH-CRQJZ&
+ secretPhrase=IWontTellYou&
+ feeNQT:100000000&
+ deadline=60
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "bbb24087ab3639f508da77413a63ed8c45431ec9b7f0413fd574faea0de7e70a",
+  "transactionJSON": {
+    "senderPublicKey": "373522bcd8904f4707472e590cbb67976d40e7af39650ea11cb2be5734cdf30c",
+    "signature": "eacaf3dc98c0e2ddc1b7b546209cecf092f16bb9e2fe9fd09760fb5815573f063...",
+    "feeNQT": "100000000",
+    "type": 4,
+    "fullHash": "b6b7ac7a29f9f638244f1025c39199e8b5f8f7c5415f77ef0ca95c0f206e1e2d",
+    "version": 1,
+    "phased": false,
+    "ecBlockId": "12092908062633562059",
+    "signatureHash": "bbb24087ab3639f508da77413a63ed8c45431ec9b7f0413fd574faea0de7e70a",
+    "attachment": {
+      "version.SetPhasingOnly": 1,
+      "controlMaxFees": "0",
+      "controlMinDuration": 0,
+      "controlMaxDuration": 0,
+      "phasingControlParams": {
+        "phasingHolding": "0",
+        "phasingQuorum": 1,
+        "phasingWhitelist": ["12664921794733526996"],
+        "phasingMinBalance": 0,
+        "phasingMinBalanceModel": 0,
+        "phasingVotingModel": 0
+      }
+    },
+    "senderRS": "BLX-7A48-47JL-T7LD-D5FS3",
+    "subtype": 1,
+    "amountNQT": "0",
+    "sender": "12745647715474645062",
+    "ecBlockHeight": 767270,
+    "deadline": 60,
+    "transaction": "4104742066941900726",
+    "timestamp": 80779288,
+    "height": 2147483647
+  },
+  "unsignedTransactionBytes": "04111898d0043c00373522bcd8904f4707472e590cbb67976d40e7af39650ea...",
+  "broadcasted": true,
+  "requestProcessingTime": 5,
+  "transactionBytes": "04111898d0043c00373522bcd8904f4707472e590cbb67976d40e7af39650ea1...",
+  "fullHash": "b6b7ac7a29f9f638244f1025c39199e8b5f8f7c5415f77ef0ca95c0f206e1e2d",
+  "transaction": "4104742066941900726"
+}
+```
+
+## Alias Operations
+
+### Buy/Sell Alias
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=sellAlias&
+  secretPhrase=IWontTellYou&
+  aliasName=nextus&
+  priceNQT=5&
+  recipient=BLX-4VNQ-RWZC-4WWQ-GVM8S&
+  feeNQT=100000000&
+  deadline=60
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "d6f026cd8a883b5b6ff78a7d0121e4847eb6744b02757427de6d7ca0bf304226",
+  "unsignedTransactionBytes": "01166e01d4013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "2041afc1687da2693ba092e33a84f665ad461e3b6762c18af61778261bc7e...",
+    "feeNQT": "100000000",
+    "type": 1,
+    "fullHash": "14a3eeb17cd4082db287259a768d32065d4cf5397ed6053fffa25e92a8a66ac7",
+    "version": 1,
+    "ecBlockId": "1612829598027150491",
+    "signatureHash": "d6f026cd8a883b5b6ff78a7d0121e4847eb6744b02757427de6d7ca0bf304226",
+    "attachment": {
+      "alias": "nextus",
+      "priceNQT": "5",
+      "version.AliasSell": 1
+    },
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 6,
+    "amountNQT": "0",
+    "sender": "15323192282528158131",
+    "recipientRS": "BLX-4VNQ-RWZC-4WWQ-GVM8S",
+    "recipient": "17013046603665206934",
+    "ecBlockHeight": 284050,
+    "deadline": 60,
+    "transaction": "3245077163546682132",
+    "timestamp": 30671214,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 8515,
+  "transactionBytes": "01166e01d4013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143...",
+  "fullHash": "14a3eeb17cd4082db287259a768d32065d4cf5397ed6053fffa25e92a8a66ac7",
+  "transaction": "3245077163546682132"
+}
+```
+
+### Set Alias
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=setAlias&
+  secretPhrase=IWontTellYou&
+  aliasName=iwonttellyou&
+  aliasURI=acct:nxt-l6fm-89wk-vk8p-fcrbb@nxt&
+  feeNQT=100000000&
+  deadline=60
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "0dc7e07acef27fe86686cfabe2d1bd57c0c038f9465c3fe3d10f67932a97af10",
+  "unsignedTransactionBytes": "011135d0d3013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "d92aefbab189b6e61f890c34b06a47e14a1a2b2ce868f77a4591d2067c51d...",
+    "feeNQT": "100000000",
+    "type": 1,
+    "fullHash": "53917acbf44109391609a9bb57832c0d5903301e3d2bd6ffcf45cf893480f5a1",
+    "version": 1,
+    "ecBlockId": "4181883296304410027",
+    "signatureHash": "0dc7e07acef27fe86686cfabe2d1bd57c0c038f9465c3fe3d10f67932a97af10",
+    "attachment": {
+      "alias": "iwonttellyou",
+      "version.AliasAssignment": 1,
+      "uri": "acct:nxt-l6fm-89wk-vk8p-fcrbb@nxt"
+    },
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 1,
+    "amountNQT": "0",
+    "sender": "15323192282528158131",
+    "ecBlockHeight": 283939,
+    "deadline": 60,
+    "transaction": "4109888654593921363",
+    "timestamp": 30658613,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 8104,
+  "transactionBytes": "011135d0d3013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473...",
+  "fullHash": "53917acbf44109391609a9bb57832c0d5903301e3d2bd6ffcf45cf893480f5a1",
+  "transaction": "4109888654593921363"
+}
+```
+
+### Delete Alias
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=deleteAlias&
+  aliasName=mystical
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "a6e68daed99c1015dd12546c042466612b52a9f5193d8513f7f12684aba5bf1d",
+  "unsignedTransactionBytes": "011809e60c023c0010f09c34f225d425306e5be55a49469081...",
+  "transactionJSON": {
+    "senderPublicKey": "10f09c34f225d425306e5be55a4946908156072afbead4d574a512d7e086ef5c",
+    "signature": "a5088bc6469e528d884e7fd3c49afeefc8656dd59c9fa5ffeab2a17b465f6d03e77...",
+    "feeNQT": "100000000",
+    "type": 1,
+    "fullHash": "63afc769e677b6210617ff7a9f5be2d7fe1aea7e46ccad968017d28df578fabf",
+    "version": 1,
+    "ecBlockId": "17895923487075501156",
+    "signatureHash": "a6e68daed99c1015dd12546c042466612b52a9f5193d8513f7f12684aba5bf1d",
+    "attachment": {
+      "version.AliasDelete": 1,
+      "alias": "mystical"
+    },
+    "senderRS": "BLX-4VDY-LNVT-LMAY-FMCKA",
+    "subtype": 8,
+    "amountNQT": "0",
+    "sender": "15295723609781267838",
+    "ecBlockHeight": 161137,
+    "deadline": 60,
+    "transaction": "2429260880513838947",
+    "timestamp": 34399753,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 52,
+  "transactionBytes": "011809e60c023c0010f09c34f225d425306e5be55a4946908156072...",
+  "transaction": "2429260880513838947"
+}
+```
+
+### Get Alias
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getAlias&
+  alias=15515279700680480368
+```
+
+**Response:**
+
+```json
+{
+  "aliasURI": "http:\\/\\/google.com",
+  "aliasName": "google",
+  "accountRS": "BLX-FLVS-VRBV-LDPD-6DZ9W",
+  "alias": "15515279700680480368",
+  "requestProcessingTime": 1,
+  "account": "5629477397208681336",
+  "timestamp": 2409343
+}
+```
+
+### Get Alias Count
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getAliasCount&
+  account=BLX-FLVS-VRBV-LDPD-6DZ9W
+```
+
+**Response:**
+
+```json
+{
+  "numberOfAliases": 200,
+  "requestProcessingTime": 2
+}
+```
+
+### Get Aliases
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getAliases&
+  account=5629477397208681336&
+  lastIndex=1
+```
+
+**Response:**
+
+```json
+{
+  "aliases": [
+    {
+      "aliasURI": "",
+      "aliasName": "101",
+      "accountRS": "BLX-FLVS-VRBV-LDPD-6DZ9W",
+      "alias": "8952438483248557843",
+      "account": "5629477397208681336",
+      "timestamp": 2409893
+    }
+  ],
+  "requestProcessingTime": 1
+}
+```
+
+### Get Aliases Like
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=getAliasesLike&
+  aliasPrefix=mysteri
+```
+
+**Response:**
+
+```json
+{
+  "aliases": [
+    {
+      "aliasURI": "",
+      "aliasName": "mysteries",
+      "accountRS": "BLX-9DZL-XFE2-EWE5-HVVAY",
+      "alias": "13234331415538245332",
+      "account": "18384674354580664306",
+      "timestamp": 4856820
+    },
+    {
+      "aliasURI": "anm",
+      "aliasName": "mysterious",
+      "accountRS": "BLX-AHBB-DSVC-WS2L-EW8BC",
+      "alias": "8033154744709486670",
+      "account": "14205721421835156777",
+      "timestamp": 2417903
+    }
+  ],
+  "requestProcessingTime": 1
+}
+```
+
+## Arbitrary Message System Operations
+
+### Decrypt From
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=decryptFrom&
+  secretPhrase=IWontTellYou&
+  account=BLX-L6FM-89WK-VK8P-FCRBB&
+  data=5c30bd27cc86a8ab0349aaf66deae3c0a9db5675b5c4ba973dd47f37e06157...&
+  nonce=7f3c9082c73a7bd825aa48d23fc138fd05a466700ff9fc3a040bbb29d3a60ee1&
+```
+
+**Response:**
+
+```json
+{
+  "decryptedMessage": "test message",
+  "requestProcessingTime": 2
+}
+```
+
+### Download Prunable Message
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=downloadPrunableMessage&
+  transaction=264609232955144528&
+  retrieve=true
+```
+
+**Response:**
+The file in binary format.
+
+### Encrypt To
+
+**Request:**
+
+```
+http://localhost:2022/nxt?
+  requestType=encryptTo&
+  secretPhrase=IWontTellYou&
+  recipient=BLX-L6FM-89WK-VK8P-FCRBB&
+  messageToEncrypt=test message&
+```
+
+**Response:**
+
+```json
+{
+  "data": "5c30bd27cc86a8ab0349aaf66deae3c0a9db5675b5c4ba973dd47f37e06157...",
+  "requestProcessingTime": 48,
+  "nonce": "7f3c9082c73a7bd825aa48d23fc138fd05a466700ff9fc3a040bbb29d3a60ee1"
+}
+```
+
+### Get All Prunable Messages
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAllPrunableMessages&
+  lastIndex=0
+
+```
+
+**Response:**
+
+```json
+{
+  "prunableMessages": [
+    {
+      "senderRS": "BLX-4VDY-LNVT-LMAY-FMCKA",
+      "sender": "15295723609781267838",
+      "recipientRS": "BLX-BMUV-8QQR-47VK-CR7F3",
+      "recipient": "11580081983047651163",
+      "blockTimestamp": 46382992,
+      "message": "This is a test prunable plain message.",
+      "transaction": "4628485271017409467",
+      "isText": true,
+      "transactionTimestamp": 46382948
+    }
+  ],
+  "requestProcessingTime": 0
+}
+```
+
+### Get Prunable Message
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getPrunableMessage&
+  transaction=16832262845403902696&
+  secretPhrase=secretPhrase
+
+```
+
+**Response:**
+
+```json
+{
+  "senderRS": "BLX-4VDY-LNVT-LMAY-FMCKA",
+  "encryptedMessage": {
+    "data": "ba6baa8361ac5bdb9cb591cee616dc5801a32ddf05b66a4ee527cd8d57b0...",
+    "nonce": "41f93e32997c70937a005e5b0b42546a1efa9ea9eb012f98d7a92d0c5a8855a4"
+  },
+  "sender": "15295723609781267838",
+  "decryptedMessage": "test prunable encrypted message",
+  "recipientRS": "BLX-BMUV-8QQR-47VK-CR7F3",
+  "recipient": "11580081983047651163",
+  "blockTimestamp": 46117919,
+  "requestProcessingTime": 3,
+  "transaction": "16832262845403902696",
+  "encryptedMessageIsText": true,
+  "transactionTimestamp": 46117594,
+  "isCompressed": true
+}
+```
+
+### Get Prunable Messages
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getPrunableMessages&
+  account=BLX-4VDY-LNVT-LMAY-FMCKA&
+  lastIndex=0
+
+```
+
+**Response:**
+
+```json
+{
+  "prunableMessages": [
+    {
+      "senderRS": "BLX-4VDY-LNVT-LMAY-FMCKA",
+      "encryptedMessage": {
+        "data": "ba6baa8361ac5bdb9cb591cee616dc5801a32ddf05b66a4ee527cd8d57b0a...",
+        "nonce": "41f93e32997c70937a005e5b0b42546a1efa9ea9eb012f98d7a92d0c5a8855a4"
+      },
+      "sender": "15295723609781267838",
+      "recipientRS": "BLX-BMUV-8QQR-47VK-CR7F3",
+      "recipient": "11580081983047651163",
+      "blockTimestamp": 46117919,
+      "transaction": "16832262845403902696",
+      "isText": true,
+      "transactionTimestamp": 46117594,
+      "isCompressed": true
+    }
+  ],
+  "requestProcessingTime": 1
+}
+```
+
+### Get Shared Key
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+ requestType=getSharedKey&
+ account=BLX-5MYN-AP7M-NKMH-CRQJZ&
+ secretPhrase=IWontTellYou&
+ nonce=0102030405060708091011121314151617181920212223242526272829303132
+
+```
+
+**Response:**
+
+```json
+{
+  "sharedKey": "927118faa4850afa7fb3ced7b17eb4968ec4f1c0a405b0890552bb54a67d0eba",
+  "requestProcessingTime": 1
+}
+```
+
+### Read Message
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=readMessage&
+  transaction=9908575668289607167&
+  secretPhrase=IWontTellYou&
+
+```
+
+**Response:**
+
+```json
+{
+  "requestProcessingTime": 1,
+  "message": "Test message.",
+  "decryptedMessage": "Test message (encrypted).",
+  "decryptedMessageToSelf": "abc123"
+}
+```
+
+### Send Message
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=sendMessage&
+  secretPhrase=IWontTellYou&
+  recipient=BLX-4VNQ-RWZC-4WWQ-GVM8S&
+  message=Test Message.&
+  deadline=60
+
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "795c58938a50d691f3f2b88bfaf03267236e972e1c068e0a5e11aeb606597f17",
+  "unsignedTransactionBytes": "01100593ce013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c14...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "e916dbbfec51ca97ae76b1b190d1c74328f74c3c43ed3a06f1ca0ea250116...",
+    "feeNQT": "100000000",
+    "type": 1,
+    "fullHash": "ff157b8a125582898b5c50d32a62f725602d5197af236fabcd6ec978b6861528",
+    "version": 1,
+    "ecBlockId": "6060075251340574063",
+    "signatureHash": "795c58938a50d691f3f2b88bfaf03267236e972e1c068e0a5e11aeb606597f17",
+    "attachment": {
+      "version.Message": 1,
+      "messageIsText": true,
+      "message": "Test message."
+    },
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 0,
+    "amountNQT": "0",
+    "sender": "15323192282528158131",
+    "recipientRS": "BLX-4VNQ-RWZC-4WWQ-GVM8S",
+    "recipient": "17013046603665206934",
+    "ecBlockHeight": 280756,
+    "deadline": 60,
+    "transaction": "9908575668289607167",
+    "timestamp": 30315269,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 11379,
+  "transactionBytes": "01100593ce013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "fullHash": "ff157b8a125582898b5c50d32a62f725602d5197af236fabcd6ec978b6861528",
+  "transaction": "9908575668289607167"
+}
+```
+
+### Verify Prunable Message
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=verifyPrunableMessage&
+  message=This is a test prunable plain message.
+
+```
+
+**Response:**
+
+```json
+{
+  "version.PrunablePlainMessage": 1,
+  "verify": true,
+  "messageIsText": true,
+  "messageHash": "da99da8026e30d971340ef54803543af3aa48ea215f80bd9375457bad8effb3f",
+  "requestProcessingTime": 1,
+  "message": "This is a test prunable plain message."
+}
+```
+
+## Asset Exchange Operations
+
+### Cancel Order
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=cancelBidOrder&
+  secretPhrase=IWontTellYou&
+  order=17185236428295897167&
+  feeNQT=100000000&
+  deadline=60
+
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "20264f33a06331f6a8d7c4362d0525aee25e4ef991653f14bbfb1b2beebba433",
+  "unsignedTransactionBytes": "02153c6ed6013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "30cf47942179f5969369699b548f5a3517ef7ff71b337db630ea5f8b6e740...",
+    "feeNQT": "100000000",
+    "type": 2,
+    "fullHash": "725f441d9f50a9b2e02d780098a827b1015ec902199becd493bfa73a4843ae89",
+    "version": 1,
+    "ecBlockId": "196207598250363138",
+    "signatureHash": "20264f33a06331f6a8d7c4362d0525aee25e4ef991653f14bbfb1b2beebba433",
+    "attachment": {
+      "version.BidOrderCancellation": 1,
+      "order": "17185236428295897167"
+    },
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 5,
+    "amountNQT": "0",
+    "sender": "15323192282528158131",
+    "ecBlockHeight": 285586,
+    "deadline": 60,
+    "transaction": "12873909654136315762",
+    "timestamp": 30830140,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 7640,
+  "transactionBytes": "02153c6ed6013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "fullHash": "725f441d9f50a9b2e02d780098a827b1015ec902199becd493bfa73a4843ae89",
+  "transaction": "12873909654136315762"
+}
+```
+
+### Delete Asset Shares
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=deleteAssetShares&
+  asset=5920455660623529270&
+  quantityQNT=100&
+  secretPhrase=IWontTellYou&
+  feeNQT=100000000&
+  deadline=60&
+  broadcast=false
+
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "883599a340375c387e7b27a4f2c37f4ee960760b31e4b1a9c604663c6b84c708",
+  "transactionJSON": {
+    "senderPublicKey": "373522bcd8904f4707472e590cbb67976d40e7af39650ea11cb2be5734cdf30c",
+    "signature": "b91a664d9ee99399ebba913fa56abea26fbf4b84fe10fa4f76a29a8eae16810e61...",
+    "feeNQT": "100000000",
+    "type": 2,
+    "fullHash": "8929fa9d30fd38c8811e079835b3959c1a3f8503df8999d5a858831ea6ba7741",
+    "version": 1,
+    "phased": false,
+    "ecBlockId": "9535861265974556985",
+    "signatureHash": "883599a340375c387e7b27a4f2c37f4ee960760b31e4b1a9c604663c6b84c708",
+    "attachment": {
+      "quantityQNT": "100",
+      "version.AssetDelete": 1,
+      "asset": "5920455660623529270"
+    },
+    "senderRS": "BLX-7A48-47JL-T7LD-D5FS3",
+    "subtype": 7,
+    "amountNQT": "0",
+    "sender": "12745647715474645062",
+    "ecBlockHeight": 757498,
+    "deadline": 60,
+    "transaction": "14427559791532059017",
+    "timestamp": 80204814,
+    "height": 2147483647
+  },
+  "unsignedTransactionBytes": "02170ed4c7043c00373522bcd8904f4707472e590cbb67976d40e7a...",
+  "broadcasted": false,
+  "requestProcessingTime": 2,
+  "transactionBytes": "02170ed4c7043c00373522bcd8904f4707472e590cbb67976d40e7af39650ea...",
+  "fullHash": "8929fa9d30fd38c8811e079835b3959c1a3f8503df8999d5a858831ea6ba7741",
+  "transaction": "14427559791532059017"
+}
+```
+
+### Dividend Payment
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=dividendPayment&
+  asset=3517042713515967694&
+  height=161157&
+  amountNQTPerQNT=100000000
+
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "5d92fee3570b7b058ace2387f5b4eef4377ea738e6a6c2aabc06bd9f6871e4b4",
+  "unsignedTransactionBytes": "02160feb0c023c0010f09c34f225d425306e5be55a49469081...",
+  "transactionJSON": {
+    "senderPublicKey": "10f09c34f225d425306e5be55a4946908156072afbead4d574a512d7e086ef5c",
+    "signature": "61e2398087b078bdba24021d909e937c2d5fe157a09fa3c82d910e7b5843e00cef2...",
+    "feeNQT": "100000000",
+    "type": 2,
+    "fullHash": "27b52e61813b73fdf9ff3b1bacf3b344d3ed60e8c94db2c9d0518c8483150770",
+    "version": 1,
+    "ecBlockId": "17871828515938613022",
+    "signatureHash": "5d92fee3570b7b058ace2387f5b4eef4377ea738e6a6c2aabc06bd9f6871e4b4",
+    "attachment": {
+      "version.DividendPayment": 1,
+      "amountNQTPerQNT": "100000000",
+      "asset": "3517042713515967694",
+      "height": 161157
+    },
+    "senderRS": "BLX-4VDY-LNVT-LMAY-FMCKA",
+    "subtype": 6,
+    "amountNQT": "0",
+    "sender": "15295723609781267838",
+    "ecBlockHeight": 161151,
+    "deadline": 60,
+    "transaction": "18263006340784764199",
+    "timestamp": 34401039,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 111,
+  "transactionBytes": "02160feb0c023c0010f09c34f225d425306e5be55a49469081560...",
+  "fullHash": "27b52e61813b73fdf9ff3b1bacf3b344d3ed60e8c94db2c9d0518c8483150770",
+  "transaction": "18263006340784764199"
+}
+```
+
+### Get Account Asset Count
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAccountAssetCount&
+  account=BLX-8N9W-TN4F-YA2S-H5B7R
+
+```
+
+**Response:**
+
+```json
+{
+  "requestProcessingTime": 1,
+  "numberOfAssets": 3
+}
+```
+
+### Get Account Assets
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAccountAssets&
+  account=BLX-4VNQ-RWZC-4WWQ-GVM8S
+
+```
+
+**Response:**
+
+```json
+{
+  "accountAssets": [
+    {
+      "quantityQNT": "68013764",
+      "unconfirmedQuantityQNT": "68013764",
+      "decimals": 0,
+      "name": "Test",
+      "asset": "17554243582654188572"
+    }
+  ],
+  "requestProcessingTime": 1
+}
+```
+
+### Get Account Current Order Ids
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAccountCurrentBidOrderIds&
+  account=BLX-L6FM-89WK-VK8P-FCRBB&
+  asset=17554243582654188572
+
+```
+
+**Response:**
+
+```json
+{
+  "bidOrderIds": ["17185236428295897167"],
+  "requestProcessingTime": 4
+}
+```
+
+### Get Account Current Orders
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAccountCurrentBidOrders&
+  account=BLX-L6FM-89WK-VK8P-FCRBB
+
+```
+
+**Response:**
+
+```json
+{
+  "bidOrders": [
+    {
+      "quantityQNT": "1000000",
+      "priceNQT": "100",
+      "accountRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+      "asset": "17554243582654188572",
+      "type": "bid",
+      "account": "15323192282528158131",
+      "order": "17185236428295897167",
+      "height": 285549
+    }
+  ],
+  "requestProcessingTime": 1
+}
+```
+
+### Get All Assets
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAllAssets&
+  firstIndex=13&
+  lastIndex=13
+
+```
+
+**Response:**
+
+```json
+{
+  "assets": [
+    {
+      "quantityQNT": "2100000000000000",
+      "numberOfAccounts": 31,
+      "accountRS": "BLX-3TKA-UH62-478B-DQU6K",
+      "decimals": 8,
+      "numberOfTransfers": 63,
+      "name": "mgwBTC",
+      "description": "Production Multigateway BTC (mgwBTC) is backed 100% by...",
+      "numberOfTrades": 9,
+      "asset": "17554243582654188572",
+      "account": "13300069592148796968"
+    }
+  ],
+  "requestProcessingTime": 13
+}
+```
+
+### Get All Open Orders
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAllOpenBidOrders&
+  firstIndex=123&
+  lastIndex=123
+
+```
+
+**Response:**
+
+```json
+{
+  "requestProcessingTime": 5631,
+  "openOrders": [
+    {
+      "quantityQNT": "1000000",
+      "priceNQT": "101",
+      "accountRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+      "asset": "17554243582654188572",
+      "type": "bid",
+      "account": "15323192282528158131",
+      "order": "12743274869785967304",
+      "height": 285577
+    }
+  ]
+}
+```
+
+### Get All Trades
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAllTrades&
+  lastIndex=0
+
+```
+
+**Response:**
+
+```json
+{
+  "trades": [
+    {
+      "seller": "14968762166783718535",
+      "quantityQNT": "10000",
+      "bidOrder": "1166717226538227076",
+      "sellerRS": "BLX-8F69-W9Z9-8M6Y-ETXGZ",
+      "buyer": "202478233571806601",
+      "priceNQT": "19796",
+      "askOrder": "16222071953599729591",
+      "buyerRS": "BLX-RMEB-W7TE-28EM-2SUM7",
+      "decimals": 8,
+      "name": "mgwBTC",
+      "block": "8807797247643599359",
+      "asset": "4551058913252105307",
+      "askOrderHeight": 285768,
+      "bidOrderHeight": 286453,
+      "tradeType": "buy",
+      "timestamp": 30920039,
+      "height": 286453
+    }
+  ],
+  "requestProcessingTime": 25840
+}
+```
+
+### Get Asset
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAsset&
+  asset=17554243582654188572
+
+```
+
+**Response:**
+
+```json
+{
+  "quantityQNT": "2100000000000000",
+  "numberOfAccounts": 31,
+  "accountRS": "BLX-3TKA-UH62-478B-DQU6K",
+  "decimals": 8,
+  "numberOfTransfers": 63,
+  "name": "mgwBTC",
+  "description": "Production Multigateway BTC (mgwBTC) is backed 100% by...",
+  "numberOfTrades": 9,
+  "requestProcessingTime": 11,
+  "asset": "17554243582654188572",
+  "account": "13300069592148796968"
+}
+```
+
+### Get Asset Account Count
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAssetAccountCount&
+  asset=17554243582654188572
+
+```
+
+**Response:**
+
+```json
+{
+  "numberOfAccounts": 38,
+  "requestProcessingTime": 14
+}
+```
+
+### Get Asset Accounts
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAssetAccounts&
+  asset=5539238107226883203
+
+```
+
+**Response:**
+
+```json
+{
+  "accountAssets": [
+    {
+      "quantityQNT": "100000000",
+      "accountRS": "BLX-JTE5-HB7Y-QPS5-B58MZ",
+      "unconfirmedQuantityQNT": "100000000",
+      "asset": "5539238107226883203",
+      "account": "11514793277306463619"
+    }
+  ],
+  "requestProcessingTime": 19
+}
+```
+
+### Get Asset Deletes
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAssetDeletes&
+  asset=5920455660623529270
+
+```
+
+**Response:**
+
+```json
+{
+  "deletes": [
+    {
+      "quantityQNT": "1000",
+      "assetDelete": "16186302132012496205",
+      "accountRS": "BLX-G885-AKDX-5G2B-BLUCG",
+      "asset": "5920455660623529270",
+      "account": "10892890577210644675",
+      "height": 678815,
+      "timestamp": 75619271
+    },
+    {
+      "quantityQNT": "1",
+      "assetDelete": "5520627816808994883",
+      "accountRS": "BLX-7A48-47JL-T7LD-D5FS3",
+      "asset": "5920455660623529270",
+      "account": "12745647715474645062",
+      "height": 513529,
+      "timestamp": 65930633
+    },
+    {
+      "quantityQNT": "1",
+      "assetDelete": "14523372185703177675",
+      "accountRS": "BLX-7A48-47JL-T7LD-D5FS3",
+      "asset": "5920455660623529270",
+      "account": "12745647715474645062",
+      "height": 512164,
+      "timestamp": 65851395
+    }
+  ],
+  "requestProcessingTime": 3
+}
+```
+
+### Get Asset Dividends
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAssetDividends&
+  asset=4348103880042995903&
+  timestamp=105414366
+
+```
+
+**Response:**
+
+```json
+{
+  "dividends": [
+    {
+      "assetDividend": "9638088763182480941",
+      "numberOfAccounts": 391,
+      "amountNQTPerQNT": "15",
+      "totalDividend": "31399603179510",
+      "dividendHeight": 1332177,
+      "asset": "4348103880042995903",
+      "height": 1332178,
+      "timestamp": 111043612
+    },
+    {
+      "assetDividend": "15350389444990902579",
+      "numberOfAccounts": 374,
+      "amountNQTPerQNT": "28",
+      "totalDividend": "51709584601752",
+      "dividendHeight": 1287433,
+      "asset": "4348103880042995903",
+      "height": 1287434,
+      "timestamp": 108351797
+    },
+    {
+      "assetDividend": "8213383200925147837",
+      "numberOfAccounts": 309,
+      "amountNQTPerQNT": "22",
+      "totalDividend": "29425292831902",
+      "dividendHeight": 1238568,
+      "asset": "4348103880042995903",
+      "height": 1238569,
+      "timestamp": 105414366
+    }
+  ],
+  "requestProcessingTime": 5
+}
+```
+
+### Get Asset Ids
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAssetIds&
+  firstIndex=15&
+  lastIndex=15
+
+```
+
+**Response:**
+
+```json
+{
+  "assetIds": ["17554243582654188572"],
+  "requestProcessingTime": 1
+}
+```
+
+### Get Asset Transfers
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAssetTransfers&
+  asset=17554243582654188572&
+  lastIndex=0
+
+```
+
+**Response:**
+
+```json
+{
+  "transfers": [
+    {
+      "quantityQNT": "500000",
+      "senderRS": "BLX-9K6X-4ZQS-PCQN-465T4",
+      "assetTransfer": "15255934090738722602",
+      "sender": "2406158154854548637",
+      "recipientRS": "BLX-YMEM-ERX3-BFUZ-4MQ4P",
+      "decimals": 8,
+      "recipient": "3065494931320556947",
+      "name": "mgwBTC",
+      "asset": "17554243582654188572",
+      "height": 287648,
+      "timestamp": 31042663
+    }
+  ],
+  "requestProcessingTime": 4
+}
+```
+
+### Get Assets
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAssets&
+  assets=17554243582654188572
+
+```
+
+**Response:**
+
+```json
+{
+  "assets": [
+    {
+      "quantityQNT": "2100000000000000",
+      "numberOfAccounts": 31,
+      "accountRS": "BLX-3TKA-UH62-478B-DQU6K",
+      "decimals": 8,
+      "numberOfTransfers": 63,
+      "name": "mgwBTC",
+      "description": "Production Multigateway BTC (mgwBTC) is backed 100% by...",
+      "numberOfTrades": 9,
+      "asset": "17554243582654188572",
+      "account": "13300069592148796968"
+    }
+  ],
+  "requestProcessingTime": 15
+}
+```
+
+### Get Assets By Issuer
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAssetsByIssuer&
+  account=BLX-DE2F-W76R-GL25-HMFPR&
+  lastIndex=0
+
+```
+
+**Response:**
+
+```json
+{
+  "assets": [
+    [
+      {
+        "quantityQNT": "10000000000",
+        "numberOfAccounts": 222,
+        "accountRS": "BLX-DE2F-W76R-GL25-HMFPR",
+        "decimals": 4,
+        "numberOfTransfers": 278,
+        "name": "NXTprivacy",
+        "description": "NXTprivacy will contain various privacy related projects...",
+        "numberOfTrades": 456,
+        "asset": "17911762572811467637",
+        "account": "18146608053740744717"
+      }
+    ]
+  ],
+  "requestProcessingTime": 9
+}
+```
+
+### Get Expected Asset Deletes
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getExpectedAssetDeletes
+
+```
+
+**Response:**
+
+```json
+{
+  "deletes": [
+    {
+      "quantityQNT": "1000",
+      "assetDelete": "16186302132012496205",
+      "accountRS": "BLX-G885-AKDX-5G2B-BLUCG",
+      "asset": "5920455660623529270",
+      "account": "10892890577210644675"
+    }
+  ],
+  "requestProcessingTime": 3
+}
+```
+
+### Get Order
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getAskOrder&
+  order=6044046093672850641
+
+```
+
+**Response:**
+
+```json
+{
+  "quantityQNT": "100",
+  "priceNQT": "100000000",
+  "transactionHeight": 346634,
+  "accountRS": "BLX-4VDY-LNVT-LMAY-FMCKA",
+  "transactionIndex": 0,
+  "requestProcessingTime": 0,
+  "asset": "17091401215301664836",
+  "type": "ask",
+  "account": "15295723609781267838",
+  "order": "6044046093672850641",
+  "height": 346634
+}
+```
+
+### Get Order Ids
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getBidOrderIds&
+  asset=17554243582654188572
+
+```
+
+**Response:**
+
+```json
+{
+  "bidOrderIds": [
+    "17972270381487138621",
+    "8331653287549483600",
+    "16386956089071870421",
+    "12743274869785967304",
+    "3409888667133338290"
+  ],
+  "requestProcessingTime": 1
+}
+```
+
+### Get Orders
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getBidOrders&
+  asset=17554243582654188572&
+  firstIndex=3&
+  lastIndex=3
+
+```
+
+**Response:**
+
+```json
+{
+  "bidOrders": [
+    {
+      "quantityQNT": "1000000",
+      "priceNQT": "101",
+      "accountRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+      "asset": "17554243582654188572",
+      "type": "bid",
+      "account": "15323192282528158131",
+      "order": "12743274869785967304",
+      "height": 285577
+    }
+  ],
+  "requestProcessingTime": 2
+}
+```
+
+### Get Expected Order Cancellations
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getExpectedOrderCancellations
+
+```
+
+**Response:**
+
+```json
+{
+  "orderCancellations": [
+    {
+      "accountRS": "BLX-4VDY-LNVT-LMAY-FMCKA",
+      "account": "15295723609781267838",
+      "order": "8404616015717333294",
+      "height": 348793,
+      "phased": false
+    }
+  ],
+  "requestProcessingTime": 1
+}
+```
+
+### Get Last Trades
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getLastTrades&
+  assets=17091401215301664836
+
+```
+
+**Response:**
+
+```json
+{
+  "trades": [
+    {
+      "seller": "11580081983047651163",
+      "quantityQNT": "100",
+      "bidOrder": "12461616895431889058",
+      "sellerRS": "BLX-BMUV-8QQR-47VK-CR7F3",
+      "buyer": "15295723609781267838",
+      "priceNQT": "100000000",
+      "askOrder": "16690422801364092687",
+      "buyerRS": "BLX-4VDY-LNVT-LMAY-FMCKA",
+      "block": "9740784167963638799",
+      "asset": "17091401215301664836",
+      "askOrderHeight": 286247,
+      "bidOrderHeight": 286243,
+      "tradeType": "sell",
+      "timestamp": 46115694,
+      "height": 286247
+    }
+  ],
+  "requestProcessingTime": 1
+}
+```
+
+### Get Order Trades
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getOrderTrades&
+  askOrder=2769987326979385551&
+  includeAssetInfo=true
+
+```
+
+**Response:**
+
+```json
+{
+  "trades": [
+    {
+      "seller": "8069635474378047786",
+      "quantityQNT": "200",
+      "bidOrder": "6083013926058683287",
+      "sellerRS": "BLX-5JBC-QQ8M-UAFJ-8UAZZ",
+      "buyer": "3617506283101058376",
+      "priceNQT": "5000000",
+      "askOrder": "2769987326979385551",
+      "buyerRS": "BLX-QXCA-TKAH-KK85-5QZE6",
+      "decimals": 0,
+      "name": "TWT",
+      "block": "17820716559461579006",
+      "asset": "7496917644161273018",
+      "askOrderHeight": 263896,
+      "bidOrderHeight": 265168,
+      "tradeType": "buy",
+      "timestamp": 44288754,
+      "height": 265168
+    }
+  ],
+  "requestProcessingTime": 0
+}
+```
+
+### Get Trades
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getTrades&
+  asset=17554243582654188572&
+  lastIndex=0
+
+```
+
+**Response:**
+
+```json
+{
+  "trades": [
+    {
+      "seller": "4012743767778395236",
+      "quantityQNT": "922082",
+      "bidOrder": "18332182738291742411",
+      "sellerRS": "BLX-J356-8B4K-L4DK-533EH",
+      "buyer": "17013046603665206934",
+      "priceNQT": "19607",
+      "askOrder": "5860848661439768841",
+      "buyerRS": "BLX-4VNQ-RWZC-4WWQ-GVM8S",
+      "decimals": 8,
+      "name": "mgwBTC",
+      "block": "15627545821108097361",
+      "asset": "17554243582654188572",
+      "askOrderHeight": 285964,
+      "bidOrderHeight": 285821,
+      "tradeType": "sell",
+      "timestamp": 30869573,
+      "height": 285964
+    }
+  ],
+  "requestProcessingTime": 0
+}
+```
+
+### Issue Asset
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=issueAsset&
+  publicKey=57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c&
+  name=SecretCoin&
+  description=This+is+SecretCoin&
+  quantityQNT=100&
+  deadline=60&
+  feeNQT=100000000000&
+  broad=false
+
+```
+
+**Response:**
+
+```json
+{
+  "unsignedTransactionBytes": "021095e5da013c0073080c6a224062660184f10ebb7fb431d459364a12403...",
+  "transactionJSON": {
+    "senderPublicKey": "73080c6a224062660184f10ebb7fb431d459364a12403320c7f601f9d75cc547",
+    "feeNQT": "100000000000",
+    "type": 2,
+    "version": 1,
+    "ecBlockId": "1564408139943737911",
+    "attachment": {
+      "name": "SecretCoin",
+      "description": "This+is+SecretCoin",
+      "quantityQNT": "100",
+      "version.AssetIssuance": 1,
+      "decimals": 0
+    },
+    "senderRS": "BLX-4VNQ-RWZC-4WWQ-GVM8S",
+    "subtype": 0,
+    "amountNQT": "0",
+    "sender": "17013046603665206934",
+    "ecBlockHeight": 288402,
+    "deadline": 60,
+    "timestamp": 31122837,
+    "height": 2147483647
+  },
+  "broadcasted": false,
+  "requestProcessingTime": 2
+}
+```
+
+### Place Order
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=placeBidOrder&
+  secretPhrase=IWontTellYou&
+  asset=17554243582654188572&
+  quantityQNT=1000000&
+  priceNQT=100&
+  feeNQT=100000000&
+  deadline=60
+
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "44028b4ddb46e7d4383331425b79019bb0f004f88ede12a5aa66f05c23a75f03",
+  "unsignedTransactionBytes": "02135a5ed6013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "65713e80be99a927bfa7bb2e9a7b6fbd2f17c226fb956494c68a6d90a8127...",
+    "feeNQT": "100000000",
+    "type": 2,
+    "fullHash": "4f00aef17a397eee25027e834ca765660e4e3f3f1b162468bdac67b315aeb812",
+    "version": 1,
+    "ecBlockId": "14593256906948324209",
+    "signatureHash": "44028b4ddb46e7d4383331425b79019bb0f004f88ede12a5aa66f05c23a75f03",
+    "attachment": {
+      "quantityQNT": "1000000",
+      "priceNQT": "100",
+      "asset": "17554243582654188572",
+      "version.BidOrderPlacement": 1
+    },
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 3,
+    "amountNQT": "0",
+    "sender": "15323192282528158131",
+    "ecBlockHeight": 285545,
+    "deadline": 60,
+    "transaction": "17185236428295897167",
+    "timestamp": 30826074,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 8729,
+  "transactionBytes": "02135a5ed6013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143...",
+  "fullHash": "4f00aef17a397eee25027e834ca765660e4e3f3f1b162468bdac67b315aeb812",
+  "transaction": "17185236428295897167"
+}
+```
+
+### Search Assets
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=searchAssets&
+  query=assets AND production
+
+```
+
+**Response:**
+
+```json
+{
+  "assets": [
+    {
+      "quantityQNT": "2100000000000000",
+      "numberOfAccounts": 37,
+      "accountRS": "BLX-3TKA-UH62-478B-DQU6K",
+      "decimals": 8,
+      "numberOfTransfers": 84,
+      "name": "mgwBTC",
+      "description": "Production Multigateway BTC (mgwBTC) is backed 100% by...",
+      "numberOfTrades": 15,
+      "asset": "17554243582654188572",
+      "account": "13300069592148796968"
+    }
+  ],
+  "requestProcessingTime": 96
+}
+```
+
+### Transfer Asset
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=transferAsset&
+  secretPhrase=IWontTellYou&
+  recipient=BLX-4VNQ-RWZC-4WWQ-GVM8S&
+  asset=17554243582654188572&
+  quantityQNT=1000&
+  feeNQT=100000000&
+  deadline=60
+
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "f622557588bc82942984286e431c978e687783b32db6a68a1c554b2e11349751",
+  "unsignedTransactionBytes": "0211c9ebda013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "33d0fccf1f19d18b4ca97d2636cf62f7a801c07628d1bbb1d6084dc3ca658d...",
+    "feeNQT": "100000000",
+    "type": 2,
+    "fullHash": "c8f25b15b48fb5efd3341fb369627d00f8fefb59dc18016ba0c482b6de7cad59",
+    "version": 1,
+    "ecBlockId": "3925493493266246517",
+    "signatureHash": "f622557588bc82942984286e431c978e687783b32db6a68a1c554b2e11349751",
+    "attachment": {
+      "version.AssetTransfer": 1,
+      "quantityQNT": "1000",
+      "asset": "17554243582654188572"
+    },
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 1,
+    "amountNQT": "0",
+    "sender": "15323192282528158131",
+    "recipientRS": "BLX-4VNQ-RWZC-4WWQ-GVM8S",
+    "recipient": "17013046603665206934",
+    "ecBlockHeight": 288416,
+    "deadline": 60,
+    "transaction": "17272869949464638152",
+    "timestamp": 31124425,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 4968,
+  "transactionBytes": "0211c9ebda013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473b...",
+  "fullHash": "c8f25b15b48fb5efd3341fb369627d00f8fefb59dc18016ba0c482b6de7cad59",
+  "transaction": "17272869949464638152"
+}
+```
+
+## Block Operations
+
+### Get Block
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getBlock&
+  block=8455642159445842600
+
+```
+
+**Response:**
+
+```json
+{
+  "previousBlockHash": "c0574d7a7b8497373dbead497c2dc7f60fdcfc8c5a9fcb48f7d373acc9bbb099",
+  "payloadLength": 1189,
+  "totalAmountNQT": "100000000",
+  "generationSignature": "c5098d37267bc71134fc8572a87b4af8727a2e5139d60fe8833fab98af22244a",
+  "generator": "11693867635361772359",
+  "generatorPublicKey": "fbb72a280228af5c8c74c7c754a290e1539f839553c00bc560cac7bfdb324a7c",
+  "baseTarget": "1530224444",
+  "payloadHash": "633992be640a593ba04e31ca4028deed70bbf47cff333e2a0372a4e2a4aba205",
+  "generatorRS": "BLX-TWU9-P3E4-HCDM-CQ9L6",
+  "nextBlock": "5937170741469897491",
+  "requestProcessingTime": 175,
+  "numberOfTransactions": 6,
+  "blockSignature": "ff65a82e385c135cf9bd5be0861e9e5d3d3174fbd993e5b7f57935ec4...",
+  "transactions": [
+    "15184285173972564233",
+    "15200280108574630445",
+    "15200507403046301754",
+    "15900338016714606285",
+    "17881859777840687131",
+    "18361738217269620028"
+  ],
+  "version": 3,
+  "totalFeeNQT": "600000000",
+  "previousBlock": "4005816059437078464",
+  "cumulativeDifficulty": "10229109959119715",
+  "block": "8455642159445842600",
+  "height": 275730,
+  "timestamp": 29797208
+}
+```
+
+### Get Block Id
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getBlockId&
+  height=12
+
+```
+
+**Response:**
+
+```json
+{
+  "block": "2680262203532249785",
+  "requestProcessingTime": 1
+}
+```
+
+### Get Blocks
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getBlocks&
+  lastIndex=1
+
+```
+
+**Response:**
+
+```json
+{
+  "blocks": [
+    {
+      "previousBlockHash": "f88c75a36317e1795348330cb9a944f33153b517ebdf05d9f3f9a606e997618d",
+      "payloadLength": 981,
+      "totalAmountNQT": "0",
+      "generationSignature": "02f7462b62270c0028c379d838d3a192cf0b782995f3bb1929a5378d26e7e8a9",
+      "generator": "2218289317977832095",
+      "generatorPublicKey": "98ccf5d5173b13e4c9eab2631372f61ce8ba506db559d73b285073a689872e75",
+      "baseTarget": "151761236",
+      "payloadHash": "82f8c8ca1f8f2252172ed1e9836d5228432fcb18aecfa7d55a119efcd242321c",
+      "generatorRS": "BLX-TGNZ-E8VK-69EX-3L9LX",
+      "numberOfTransactions": 5,
+      "blockSignature": "76a3f7f966256c4985262fb4622190b2b9a19b900f6ce443ab7d581e3176c...",
+      "transactions": [
+        "10545999940082849455",
+        "16751328983055099280",
+        "1257496316971695605",
+        "2048859884870801838",
+        "5105170273384355243"
+      ],
+      "version": 3,
+      "totalFeeNQT": "500000000",
+      "previousBlock": "8782326465060769016",
+      "block": "7299310714263322546",
+      "height": 281683,
+      "timestamp": 30416681
+    },
+    {
+      "previousBlockHash": "edc2d65d24883b9b32c46da4eec3792a69a5ff9a9b1e629c4e7e0224432c87c9",
+      "payloadLength": 0,
+      "totalAmountNQT": "0",
+      "generationSignature": "8c4944c7a9ef5700d1b89660fdf83bcbd3dbbfbe191fef005d0f248a573816fe",
+      "generator": "15766845356521829337",
+      "generatorPublicKey": "11636697faf4ade736cedf6c528bec0142353c4d93fce05cdb818c49e0390422",
+      "baseTarget": "303522472",
+      "payloadHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "generatorRS": "BLX-2EYT-C522-VL6G-FQSMP",
+      "nextBlock": "7299310714263322546",
+      "numberOfTransactions": 0,
+      "blockSignature": "90464d183ed01cb0930ef527e746eaa092d1558697c369cc9246add5f6eec...",
+      "transactions": [],
+      "version": 3,
+      "totalFeeNQT": "0",
+      "previousBlock": "11185683789279314669",
+      "block": "8782326465060769016",
+      "height": 281682,
+      "timestamp": 30416671
+    }
+  ],
+  "requestProcessingTime": 2
+}
+```
+
+### Get EC Block
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getECBlock
+
+```
+
+**Response:**
+
+```json
+{
+  "ecBlockHeight": 281777,
+  "requestProcessingTime": 2,
+  "ecBlockId": "6565813579609649593",
+  "timestamp": 30427868
+}
+```
+
+## Digital Goods Store Operations
+
+### DGS Delisting
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=dgsDelisting&
+  goods=11813734897437346473
+  secretPhrase=IWontTellYou&
+  feeNQT=100000000&
+  deadline=60
+
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "87dd2aa00690acaa5da4e8cd9db6ab94b5ed8bf0f8fe2c2ba6a39c57d3073105",
+  "unsignedTransactionBytes": "03111852e2013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "39ee52204d0a32c0bbd0e4bc6a6fb52299cd7d16ab74e9a040f857d3b1c3e...",
+    "feeNQT": "100000000",
+    "type": 3,
+    "fullHash": "40e64c357e240f9b7ca5780e757e34d48a58ae93eeb19e62d020d5719b43e2b6",
+    "version": 1,
+    "ecBlockId": "5345754442518111082",
+    "signatureHash": "87dd2aa00690acaa5da4e8cd9db6ab94b5ed8bf0f8fe2c2ba6a39c57d3073105",
+    "attachment": {
+      "version.DigitalGoodsDelisting": 1,
+      "goods": "11813734897437346473"
+    },
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 1,
+    "amountNQT": "0",
+    "sender": "15323192282528158131",
+    "ecBlockHeight": 292903,
+    "deadline": 60,
+    "transaction": "11173189325008201280",
+    "timestamp": 31609368,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 5188,
+  "transactionBytes": "03111852e2013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "fullHash": "40e64c357e240f9b7ca5780e757e34d48a58ae93eeb19e62d020d5719b43e2b6",
+  "transaction": "11173189325008201280"
+}
+```
+
+### DGS Delivery
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=dgsDelivery&
+  purchase=3723760852542296589&
+  goodsToEncrypt=Download Code.&
+  secretPhrase=IWontTellYou&
+  feeNQT=100000000&
+  deadline=60
+
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "f3f1f1bf30c7a6f5a7776aa23502dfe5240efe0d5c016760f8e8a152c4eb1b1b",
+  "unsignedTransactionBytes": "0315b20fe1013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "b96c42161ce38177168de5a8906ce747a5415017df5b16cdce1c015cb6e1f10b...",
+    "feeNQT": "100000000",
+    "type": 3,
+    "fullHash": "349926ea025b627117c05fbe3ff298e97a8efdb07f7ae552b5a91e7112c5b82b",
+    "version": 1,
+    "ecBlockId": "15813950788992376142",
+    "signatureHash": "f3f1f1bf30c7a6f5a7776aa23502dfe5240efe0d5c016760f8e8a152c4eb1b1b",
+    "attachment": {
+      "goodsIsText": true,
+      "discountNQT": "0",
+      "purchase": "3723760852542296589",
+      "goodsData": "aef91bfe543844964b0dadc51c6fe4c624b6b0c72c23c5c61f7e626f51e15...",
+      "version.DigitalGoodsDelivery": 1,
+      "goodsNonce": "4cb474ec53a590c6fd20d050c429d009ddefd286b2782eb3a0782ae45c2bbbbd"
+    },
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 5,
+    "amountNQT": "0",
+    "sender": "15323192282528158131",
+    "recipientRS": "BLX-6GMG-FC5F-YSX6-8CVEL",
+    "recipient": "7580519603555678830",
+    "ecBlockHeight": 292069,
+    "deadline": 60,
+    "transaction": "8170192742079961396",
+    "timestamp": 31526834,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 8832,
+  "transactionBytes": "0315b20fe1013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "fullHash": "349926ea025b627117c05fbe3ff298e97a8efdb07f7ae552b5a91e7112c5b82b",
+  "transaction": "8170192742079961396"
+}
+```
+
+### DGS Feedback
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=dgsFeedback&
+  purchase=10234639413366748292&
+  secretPhrase=IWontTellYou&
+  feeNQT=100000000&
+  deadline=60&
+  message=Thank You!
+
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "bf31e4e3b2037bfe223efd72519e3a2d25cd1e0dc1a62e3eeefe59179e16a7a4",
+  "unsignedTransactionBytes": "0316a463e2013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "a3ee76ce4bec0328fe5cfc1a2adfc229a8c9959a81b7912664de51156987c...",
+    "feeNQT": "100000000",
+    "type": 3,
+    "fullHash": "491d94b9031b7a7a32d9ab5d0491b81364941eb080ee9029de58cb6ffa0161f6",
+    "version": 1,
+    "ecBlockId": "5484311742753527844",
+    "signatureHash": "bf31e4e3b2037bfe223efd72519e3a2d25cd1e0dc1a62e3eeefe59179e16a7a4",
+    "attachment": {
+      "purchase": "10234639413366748292",
+      "version.Message": 1,
+      "messageIsText": true,
+      "version.DigitalGoodsFeedback": 1,
+      "message": "Thank you!"
+    },
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 6,
+    "amountNQT": "0",
+    "sender": "15323192282528158131",
+    "recipientRS": "BLX-6GMG-FC5F-YSX6-8CVEL",
+    "recipient": "7580519603555678830",
+    "ecBlockHeight": 292938,
+    "deadline": 60,
+    "transaction": "8825396122598251849",
+    "timestamp": 31613860,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 9343,
+  "transactionBytes": "0316a463e2013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "fullHash": "491d94b9031b7a7a32d9ab5d0491b81364941eb080ee9029de58cb6ffa0161f6",
+  "transaction": "8825396122598251849"
+}
+```
+
+### DGS Listing
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=dgsListing&
+  secretPhrase=IWontTellYou&
+  name=Test Product&
+  description=Testing the DGS.
+  tags=test, product, tag, extra&
+  quantity=3&
+  priceNQT=100000000&
+  feeNQT=100000000&
+  deadline=60
+
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "565bc0a6140ae1331cd5db009fbd9da164d8802330939ef40204a9bc343b3149",
+  "unsignedTransactionBytes": "031092aedf013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "465ed3dfef9a02fc97fc18a6f83bb9f07c285aef41ff78c957d59cda2972ba...",
+    "feeNQT": "100000000",
+    "type": 3,
+    "fullHash": "a98a63204cd1f2a3304cee79776854f290f0472883c576056fec16a23efa90df",
+    "version": 1,
+    "ecBlockId": "4480409615309425420",
+    "signatureHash": "565bc0a6140ae1331cd5db009fbd9da164d8802330939ef40204a9bc343b3149",
+    "attachment": {
+      "priceNQT": "100000000",
+      "quantity": 3,
+      "name": "Test Product",
+      "description": "Testing the DGS.",
+      "version.DigitalGoodsListing": 1,
+      "tags": "test, product, tag, extra"
+    },
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 0,
+    "amountNQT": "0",
+    "sender": "15323192282528158131",
+    "ecBlockHeight": 291240,
+    "deadline": 60,
+    "transaction": "11813734897437346473",
+    "timestamp": 31436434,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 8958,
+  "transactionBytes": "031092aedf013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473b...",
+  "fullHash": "a98a63204cd1f2a3304cee79776854f290f0472883c576056fec16a23efa90df",
+  "transaction": "11813734897437346473"
+}
+```
+
+### DGS Price Change
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=dgsPriceChange&
+  goods=11813734897437346473&
+  priceNQT=200000000&
+  secretPhrase=IWontTellYou&
+  feeNQT=100000000&
+  deadline=60
+
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "aad88476935eda8ca3a9190163b83106e6ca95733ddfa274d29a0378d773cc3c",
+  "unsignedTransactionBytes": "0312cebbdf013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "533f9c330100cab8a7a0f9375b49a09f6432b0e029660ab715a728ac75e6c2...",
+    "feeNQT": "100000000",
+    "type": 3,
+    "fullHash": "1964e4fe11f4a00a96c79e274f9da21f64d7fe10ed77a154975b92d3c65f1287",
+    "version": 1,
+    "ecBlockId": "14411471768450948944",
+    "signatureHash": "aad88476935eda8ca3a9190163b83106e6ca95733ddfa274d29a0378d773cc3c",
+    "attachment": {
+      "goods": "11813734897437346473",
+      "priceNQT": "200000000",
+      "version.DigitalGoodsPriceChange": 1
+    },
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 2,
+    "amountNQT": "0",
+    "sender": "15323192282528158131",
+    "ecBlockHeight": 291259,
+    "deadline": 60,
+    "transaction": "765880294780986393",
+    "timestamp": 31439822,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 6444,
+  "transactionBytes": "0312cebbdf013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "fullHash": "1964e4fe11f4a00a96c79e274f9da21f64d7fe10ed77a154975b92d3c65f1287",
+  "transaction": "765880294780986393"
+}
+```
+
+### DGS Purchase
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=dgsPurchase&
+  goods=1587116104511359906&
+  quantity=1&
+  deliveryDeadlineTimestamp=31800000&
+  secretPhrase=IWontTellYou&
+  feeNQT=100000000&
+  deadline=60
+
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "03e112d8707ae33ec37ff4405f31920c0e67c58439e33033c248b3eaca81d2c3",
+  "unsignedTransactionBytes": "0314805be2013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "a2739ef63024d9d3c61bebbb2692e7a2092666e13fc380c2e8b29c3a3fc24...",
+    "feeNQT": "100000000",
+    "type": 3,
+    "fullHash": "84f4ef2d52be088e011e5b7857fbab88665918e0df02102a8333aee53c3bb88b",
+    "version": 1,
+    "ecBlockId": "3186563001195424357",
+    "signatureHash": "03e112d8707ae33ec37ff4405f31920c0e67c58439e33033c248b3eaca81d2c3",
+    "attachment": {
+      "goods": "1587116104511359906",
+      "priceNQT": "100000000",
+      "quantity": 1,
+      "deliveryDeadlineTimestamp": 31800000,
+      "version.DigitalGoodsPurchase": 1
+    },
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 4,
+    "amountNQT": "0",
+    "sender": "15323192282528158131",
+    "recipientRS": "BLX-6GMG-FC5F-YSX6-8CVEL",
+    "recipient": "7580519603555678830",
+    "ecBlockHeight": 292925,
+    "deadline": 60,
+    "transaction": "10234639413366748292",
+    "timestamp": 31611776,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 5536,
+  "transactionBytes": "0314805be2013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "fullHash": "84f4ef2d52be088e011e5b7857fbab88665918e0df02102a8333aee53c3bb88b",
+  "transaction": "10234639413366748292"
+}
+```
+
+### DGS Quantity Change
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=dgsQuantityChange&
+  goods=11813734897437346473&
+  deltaQuantity=-1&
+  secretPhrase=IWontTellYou&
+  feeNQT=100000000&
+  deadline=60
+
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "5c60fc94452980f88423c3a16a74d49209d246d0f7454024c87cc76ea3221500",
+  "unsignedTransactionBytes": "031334b7df013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "7eaf8e48a780f51aa7e01c01091c9388b72a1bf075dddbd3594d55ad169272...",
+    "feeNQT": "100000000",
+    "type": 3,
+    "fullHash": "f3cd9046bba3706dd6f63cf387f23c7c29532ff15e3423f57900613c844a646f",
+    "version": 1,
+    "ecBlockId": "14589429051005044326",
+    "signatureHash": "5c60fc94452980f88423c3a16a74d49209d246d0f7454024c87cc76ea3221500",
+    "attachment": {
+      "goods": "11813734897437346473",
+      "version.DigitalGoodsQuantityChange": 1,
+      "deltaQuantity": -1
+    },
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 3,
+    "amountNQT": "0",
+    "sender": "15323192282528158131",
+    "ecBlockHeight": 291249,
+    "deadline": 60,
+    "transaction": "7885982972263845363",
+    "timestamp": 31438644,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 7474,
+  "transactionBytes": "031334b7df013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "fullHash": "f3cd9046bba3706dd6f63cf387f23c7c29532ff15e3423f57900613c844a646f",
+  "transaction": "7885982972263845363"
+}
+```
+
+### DGS Refund
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=dgsRefund&
+  purchase=3723760852542296589&
+  refundNQT=100000000&
+  secretPhrase=IWontTellYou&
+  feeNQT=100000000&
+  deadline=60
+
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "dafa980759db6bd6e5f11aa7bdc1cff1bb201be750328c397870f1758cef975c",
+  "unsignedTransactionBytes": "0317944ee2013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "43a90c1f0dde1bca84623e69b0abe0284883600d7bfb5286b3489a9ee417...",
+    "feeNQT": "100000000",
+    "type": 3,
+    "fullHash": "64c2af2811da3306f4671002ed1f12655fca1937a0b68164da2a71f3ee63adce",
+    "version": 1,
+    "ecBlockId": "11418000967717599433",
+    "signatureHash": "dafa980759db6bd6e5f11aa7bdc1cff1bb201be750328c397870f1758cef975c",
+    "attachment": {
+      "purchase": "3723760852542296589",
+      "version.DigitalGoodsRefund": 1,
+      "refundNQT": "100000000"
+    },
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 7,
+    "amountNQT": "0",
+    "sender": "15323192282528158131",
+    "recipientRS": "BLX-6GMG-FC5F-YSX6-8CVEL",
+    "recipient": "7580519603555678830",
+    "ecBlockHeight": 292899,
+    "deadline": 60,
+    "transaction": "446940555271717476",
+    "timestamp": 31608468,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 10509,
+  "transactionBytes": "0317944ee2013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b...",
+  "fullHash": "64c2af2811da3306f4671002ed1f12655fca1937a0b68164da2a71f3ee63adce",
+  "transaction": "446940555271717476"
+}
+```
+
+### Get DGS Expired Purchases
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getDGSExpiredPurchases&
+  seller=BLX-XK4R-7VJU-6EQG-7R335
+
+```
+
+**Response:**
+
+```json
+{
+  "purchases": [
+    {
+      "seller": "5873880488492319831",
+      "priceNQT": "1000000000",
+      "quantity": 1,
+      "deliveryDeadlineTimestamp": 44955165,
+      "buyerRS": "BLX-XK4R-7VJU-6EQG-7R335",
+      "pending": false,
+      "purchase": "17272258199467687054",
+      "name": "MyProduct",
+      "goods": "4830545483228225683",
+      "sellerRS": "BLX-XK4R-7VJU-6EQG-7R335",
+      "buyer": "5873880488492319831",
+      "timestamp": 44397533
+    }
+  ],
+  "requestProcessingTime": 1
+}
+```
+
+### Get DGS Good
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getDGSGood&
+  goods=11813734897437346473
+
+```
+
+**Response:**
+
+```json
+{
+  "seller": "15323192282528158131",
+  "quantity": 3,
+  "goods": "11813734897437346473",
+  "description": "Testing the DGS.",
+  "sellerRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+  "requestProcessingTime": 1,
+  "delisted": false,
+  "parsedTags": ["test", "product", "tag"],
+  "tags": "test, product, tag, extra",
+  "priceNQT": "100000000",
+  "numberOfPublicFeedbacks": 0,
+  "name": "Test Product",
+  "numberOfPurchases": 0,
+  "timestamp": 31436434
+}
+```
+
+### Get DGS Goods
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getDGSGoods&
+  seller=BLX-L6FM-89WK-VK8P-FCRBB
+
+```
+
+**Response:**
+
+```json
+{
+  "goods": [
+    {
+      "seller": "15323192282528158131",
+      "quantity": 2,
+      "goods": "11813734897437346473",
+      "description": "Testing the DGS.",
+      "sellerRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+      "delisted": false,
+      "parsedTags": ["test", "product", "tag"],
+      "tags": "test, product, tag, extra",
+      "priceNQT": "200000000",
+      "numberOfPublicFeedbacks": 0,
+      "name": "Test Product",
+      "numberOfPurchases": 0,
+      "timestamp": 31436434
+    }
+  ],
+  "requestProcessingTime": 46
+}
+```
+
+### Get DGS Goods Count
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getDGSGoodsCount&
+  seller=BLX-L6FM-89WK-VK8P-FCRBB
+
+```
+
+**Response:**
+
+```json
+{
+  "numberOfGoods": 1,
+  "requestProcessingTime": 2
+}
+```
+
+### Get DGS Goods Purchase Count
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getDGSGoodsPurchaseCount&
+  goods=11813734897437346473
+
+```
+
+**Response:**
+
+```json
+{
+  "numberOfPurchases": 1,
+  "requestProcessingTime": 1
+}
+```
+
+### Get DGS Goods Purchases
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getDGSGoodsPurchases&
+  goods=11813734897437346473
+
+```
+
+**Response:**
+
+```json
+{
+  "purchases": [
+    {
+      "seller": "15323192282528158131",
+      "quantity": 2,
+      "pending": false,
+      "purchase": "3723760852542296589",
+      "goods": "11813734897437346473",
+      "sellerRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+      "buyer": "7580519603555678830",
+      "priceNQT": "200000000",
+      "deliveryDeadlineTimestamp": 31600000,
+      "goodsIsText": false,
+      "buyerRS": "BLX-6GMG-FC5F-YSX6-8CVEL",
+      "name": "Test Product",
+      "goodsData": {
+        "data": "aef91bfe543844964b0dadc51c6fe4c624b6b0c72c23c5c61f7e626f51e15...",
+        "nonce": "4cb474ec53a590c6fd20d050c429d009ddefd286b2782eb3a0782ae45c2bbbbd"
+      },
+      "timestamp": 31520720
+    }
+  ],
+  "requestProcessingTime": 305
+}
+```
+
+### Get DGS Pending Purchases
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getDGSPendingPurchases&
+  seller=BLX-L6FM-89WK-VK8P-FCRBB
+
+```
+
+**Response:**
+
+```json
+{
+  "purchases": [
+    {
+      "seller": "15323192282528158131",
+      "priceNQT": "200000000",
+      "quantity": 2,
+      "deliveryDeadlineTimestamp": 31600000,
+      "buyerRS": "BLX-6GMG-FC5F-YSX6-8CVEL",
+      "pending": true,
+      "purchase": "3723760852542296589",
+      "name": "Test Product",
+      "goods": "11813734897437346473",
+      "sellerRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+      "buyer": "7580519603555678830",
+      "timestamp": 31520720
+    }
+  ],
+  "requestProcessingTime": 1
+}
+```
+
+### Get DGS Purchase
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getDGSPurchase&
+  purchase=10234639413366748292
+
+```
+
+**Response:**
+
+```json
+{
+  "seller": "7580519603555678830",
+  "quantity": 1,
+  "feedbackNotes": [
+    {
+      "data": "7086a82f4da0708d4eaa9b16d5fc5a25c556596ea29d957d0a1dddd0a482c...",
+      "nonce": "c521481ce67f7778c41c6716806047d4ea641005392cd7e5ce8d20c49623dad8"
+    }
+  ],
+  "publicFeedbacks": ["Thank you again!", "Thank you!"],
+  "pending": false,
+  "purchase": "10234639413366748292",
+  "goods": "1587116104511359906",
+  "sellerRS": "BLX-6GMG-FC5F-YSX6-8CVEL",
+  "requestProcessingTime": 1,
+  "buyer": "15323192282528158131",
+  "priceNQT": "100000000",
+  "deliveryDeadlineTimestamp": 31800000,
+  "goodsIsText": false,
+  "buyerRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+  "discountNQT": "100000000",
+  "name": "Test Product",
+  "goodsData": {
+    "data": "5f4868022381aa9532614a7aae1600e59e84c80571add107dabca891df97e7...",
+    "nonce": "c017b846de4375741ebc9f3bff894270d218ff4090a66dfd505770ccdc2f54bd"
+  },
+  "timestamp": 31611776
+}
+```
+
+### Get DGS Purchase Count
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getDGSPurchaseCount&
+  seller=BLX-L6FM-89WK-VK8P-FCRBB
+
+```
+
+**Response:**
+
+```json
+{
+  "numberOfPurchases": 2,
+  "requestProcessingTime": 1
+}
+```
+
+### Get DGS Purchases
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getDGSPurchases&
+  seller=BLX-L6FM-89WK-VK8P-FCRBB&
+  lastIndex=0
+
+```
+
+**Response:**
+
+```json
+{
+  "purchases": [
+    {
+      "seller": "15323192282528158131",
+      "priceNQT": "200000000",
+      "quantity": 2,
+      "deliveryDeadlineTimestamp": 31600000,
+      "buyerRS": "BLX-6GMG-FC5F-YSX6-8CVEL",
+      "pending": true,
+      "purchase": "3723760852542296589",
+      "name": "Test Product",
+      "goods": "11813734897437346473",
+      "sellerRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+      "buyer": "7580519603555678830",
+      "timestamp": 31520720
+    }
+  ],
+  "requestProcessingTime": 1
+}
+```
+
+### Get DGS Tag Count
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getDGSTagCount
+
+```
+
+**Response:**
+
+```json
+{
+  "numberOfTags": 383,
+  "requestProcessingTime": 472
+}
+```
+
+### Get DGS Tags
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getDGSTags&
+  lastIndex=0
+
+```
+
+**Response:**
+
+```json
+{
+  "requestProcessingTime": 2,
+  "tags": [
+    {
+      "inStockCount": 40,
+      "tag": "domains",
+      "totalCount": 42
+    }
+  ]
+}
+```
+
+### Get DGS Tags Like
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getDGSTagsLike&
+  tagPrefix=item
+
+```
+
+**Response:**
+
+```json
+{
+  "requestProcessingTime": 1,
+  "tags": [
+    {
+      "inStockCount": 1,
+      "tag": "items",
+      "totalCount": 1
+    }
+  ]
+}
+```
+
+### Search DGS Goods
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=searchDGSGoods&
+  tag=test
+
+```
+
+**Response:**
+
+```json
+{
+  "goods": [
+    {
+      "seller": "7580519603555678830",
+      "quantity": 1,
+      "goods": "1587116104511359906",
+      "description": "This is a test. Please do not order.",
+      "sellerRS": "BLX-6GMG-FC5F-YSX6-8CVEL",
+      "delisted": false,
+      "parsedTags": ["test", "product", "tag"],
+      "tags": "test,product,tag",
+      "priceNQT": "100000000",
+      "numberOfPublicFeedbacks": 1,
+      "name": "Test Product",
+      "numberOfPurchases": 1,
+      "timestamp": 31611435
+    }
+  ],
+  "requestProcessingTime": 4
+}
+```
+
+## Forging Operations
+
+### Start / Stop / Get Forging
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=startForging&
+  secretPhrase=IWontTellYou
+
+```
+
+**Response:**
+
+```json
+{
+  "requestProcessingTime": 1,
+  "deadline": 0,
+  "hitTime": 0
+}
+```
+
+### Lease Balance
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=leaseBalance&
+  period=1440&
+  recipient=BLX-4VNQ-RWZC-4WWQ-GVM8S&
+  secretPhrase=IWontTellYou&
+  feeNQT=100000000&
+  deadline=60
+
+```
+
+**Response:**
+
+```json
+{
+  "signatureHash": "462590bb85b615ddd34d59a1ffdc452a9baee2088044c1b9eb44298e49158f35",
+  "unsignedTransactionBytes": "04107977ce013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473b...",
+  "transactionJSON": {
+    "senderPublicKey": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c",
+    "signature": "4a89702535246fd55bfc4b4691dc4266daa3100e00cdf0caaed57a5ad750da075a...",
+    "feeNQT": "100000000",
+    "type": 4,
+    "fullHash": "251bcd86057c09bb2d055bbeeb9b67ccae861f75d4aada21b3b79a13db9712e1",
+    "version": 1,
+    "ecBlockId": "6565389899781382679",
+    "signatureHash": "462590bb85b615ddd34d59a1ffdc452a9baee2088044c1b9eb44298e49158f35",
+    "attachment": {
+      "version.EffectiveBalanceLeasing": 1,
+      "period": 1440
+    },
+    "senderRS": "BLX-L6FM-89WK-VK8P-FCRBB",
+    "subtype": 0,
+    "amountNQT": "0",
+    "sender": "15323192282528158131",
+    "recipientRS": "BLX-4VNQ-RWZC-4WWQ-GVM8S",
+    "recipient": "17013046603665206934",
+    "ecBlockHeight": 280672,
+    "deadline": 60,
+    "transaction": "13477439723061189413",
+    "timestamp": 30308217,
+    "height": 2147483647
+  },
+  "broadcasted": true,
+  "requestProcessingTime": 7340,
+  "transactionBytes": "04107977ce013c0057fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473b...",
+  "fullHash": "251bcd86057c09bb2d055bbeeb9b67ccae861f75d4aada21b3b79a13db9712e1",
+  "transaction": "13477439723061189413"
+}
+```
+
+### Get Next Block Generators
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=getNextBlockGenerators&
+  limit=3
+
+```
+
+**Response:**
+
+```json
+{
+  "activeCount": 216,
+  "lastBlock": "10153073870267066931",
+  "generators": [
+    {
+      "effectiveBalanceNXT": 5400786,
+      "accountRS": "BLX-8HNT-4ZTF-ZXH3-7RU38",
+      "deadline": 4,
+      "account": "5982846390354787993",
+      "hitTime": 112224054
+    },
+    {
+      "effectiveBalanceNXT": 4061204,
+      "accountRS": "BLX-HLNR-4HDK-HQUJ-37545",
+      "deadline": 35,
+      "account": "1263370831364868759",
+      "hitTime": 112224085
+    },
+    {
+      "effectiveBalanceNXT": 8847921,
+      "accountRS": "BLX-ZEKG-CHYB-N8AR-4TQ3U",
+      "deadline": 52,
+      "account": "3244519536310858286",
+      "hitTime": 112224102
+    }
+  ],
+  "requestProcessingTime": 1,
+  "timestamp": 112224050,
+  "height": 1351776
+}
+```
+
+## Hallmark Operations
+
+### Decode Hallmark
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=decodeHallmark&
+  hallmark=827ed8cf83bbd36419002759d960a1bec952f2209db8ed3be958...
+
+```
+
+**Response:**
+
+```json
+{
+  "date": "2013-12-10",
+  "valid": true,
+  "accountRS": "BLX-FEJ5-H4YB-QD3D-2L3W2",
+  "host": "nxttyclub.info",
+  "weight": 100,
+  "requestProcessingTime": 2,
+  "account": "31580691533050371"
+}
+```
+
+### Generate Hallmark
+
+**Request:**
+
+```
+
+http://localhost:2022/nxt?
+  requestType=markHost&
+  secretPhrase=IWontTellYou&
+  host=iwonttellyou.com&
+  weight=1&
+  date=2014-11-22
+
+```
+
+**Response:**
+
+```json
+{
+  "hallmark": "57fb6f3a958e320bb49c4e81b4c2cf28b9f25d086c143b473beec228f79ff93c...",
+  "requestProcessingTime": 5
+}
+```
+

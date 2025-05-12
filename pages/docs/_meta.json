@@ -1,0 +1,17 @@
+{
+  "introduction": {
+    "title": "Introduction"
+  },
+  "components": {
+    "title": "Components"
+  },
+  "getting-started": {
+    "title": "Getting Started"
+  },
+  "api": {
+    "title": "API"
+  },
+  "node-rewards": {
+    "title": "Node Rewards"
+  }
+}
