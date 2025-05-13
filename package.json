@@ -28,6 +28,7 @@
     "react-compare-slider": "^2.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.0",
+    "rustywind": "^0.24.0",
     "sass": "^1.58.3",
     "sharp": "^0.31.3"
   },

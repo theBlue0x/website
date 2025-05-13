@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { DocsThemeConfig } from 'nextra-theme-docs';
-import logo from './public/logo.png';
+import logo from './public/logo.webp';
 import Footer from './components/Footer';
 import { useRouter } from 'next/router';
 
@@ -21,7 +21,7 @@ const config: DocsThemeConfig = {
         description: 'Free. Open-source. Decentralized. Taking back control of money.',
         images: [
           {
-            url: 'https://blue0x.com/images/blx-og.png',
+            url: 'https://blue0x.com/images/blx-og.webp',
             width: 1200,
             height: 630,
             alt: 'Blue0x screenshot',
