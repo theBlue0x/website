@@ -36,7 +36,7 @@ export default function Home() {
               Open-sourced. Decentralized. Secure.
               <br />
               </p>
-              <p className="my-4 max-w-2xl text-lg/7 text-gray-400 md:max-w-xl tracking-tight">
+              <p className="my-4 max-w-2xl tracking-tight text-gray-400 md:max-w-xl text-lg/7">
               Blue0x is a monetary system built on computational trust that eliminates the need for
               intermediaries and returns control of national & personal finance back to the people.
               <br />
@@ -63,10 +63,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="overflow-hidden relative py-24 px-6 border-t sm:py-32 lg:overflow-visible lg:px-0 border-gray-900 isolate">
+      <div className="overflow-hidden relative py-24 px-6 border-t border-gray-900 sm:py-32 lg:overflow-visible lg:px-0 isolate">
         <div className="overflow-hidden absolute inset-0 -z-10">
           <svg
-            className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)] stroke-gray-800"
+            className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)] stroke-gray-800"
             aria-hidden="true"
           >
             <defs>
@@ -81,7 +81,7 @@ export default function Home() {
                 <path d="M100 200V.5M.5 .5H200" fill="none" />
               </pattern>
             </defs>
-            <svg x="50%" y={-1} className="overflow-visible fill-gray-50 fill-gray-900">
+            <svg x="50%" y={-1} className="overflow-visible fill-gray-900">
               <path
                 d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
                 strokeWidth={0}
@@ -103,7 +103,7 @@ export default function Home() {
                 <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl light:text-gray-900">
                   Everything you need is already here
                 </h1>
-                <p className="mt-6 text-lg/7 text-gray-400 tracking-tight">
+                <p className="mt-6 tracking-tight text-gray-400 text-lg/7">
                   Blue0x is not just a blockchain. There is an entire decentralized
                   ecosystem, built-in and ready to go! All transactions are executed on-chain and
                   are fully transparent.
@@ -141,7 +141,7 @@ export default function Home() {
                       aria-hidden="true"
                     />
                     <span>
-                      <strong className="font-semibold text-blue-600">
+                      <strong className="font-semiboldtext-blue-600">
                         Blue0x Marketplace.
                       </strong>{' '}
                       Buy and sell anything, anytime, anywhere on the first decentralized crypto marketplace.
@@ -168,11 +168,11 @@ export default function Home() {
       </div>
 
       <div className="relative from-gray-50 to-gray-200">
-        <div className="px-6 pt-4 pb-12 mx-auto lg:max-w-7xl">
-          <h2 className="text-4xl font-extrabold tracking-tight text-center text-white">
+        <div className="px-6 pt-3 pb-12 mx-auto lg:max-w-7xl">
+          <h2 className="text-4xl font-extrabold tracking-tight text-center dark:text-white">
             Easy to setup and use
           </h2>
-          <p className="mx-auto mt-4 text-gray-400 lg:max-w-3xl text-center">
+          <p className="mx-auto mt-4 text-center text-gray-400 lg:max-w-3xl">
             Whatever your skill set or hardware, we got you covered.
           </p>
           <div className="flex justify-center mt-8 mb-14">
