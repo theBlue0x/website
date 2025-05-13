@@ -18,7 +18,7 @@ const config: DocsThemeConfig = {
       openGraph: {
         url: 'https://blue0x.com',
         title: 'Blue0x - Together.  We Are the Bank.',
-        description: 'Free. Open-source. Decentralized.',
+        description: 'Open-sourced. Decentralized. Secure.',
         images: [
           {
             url: 'https://blue0x.com/images/blx-og.png',
@@ -33,8 +33,8 @@ const config: DocsThemeConfig = {
       twitter: {
         card: 'summary_large_image',
         site: '@blue0x_com',
-        title: "Blue0x ",
-        description: "Together. We Are the Bank.",
+        title: 'Blue0x - Together.  We Are the Bank.',
+        description: 'Open-sourced. Decentralized. Secure.',
         creator: '@blue0x_com',
         images: {
           url: 'https://blue0x.com/images/blx-og.png',
@@ -70,11 +70,14 @@ const config: DocsThemeConfig = {
     <>
       <meta httpEquiv="Content-Language" content="en" />
       <meta name="description" content="Blue0x - Together. We Are the Bank." />
+      <meta name="twitter:title" content="Blue0x - Together. We Are the Bank." />
+      <meta name="twitter:description" content="Open-sourced. Decentralized. Secure." />
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content="@blue0x_com" />
       <meta name="twitter:site" content="@blue0x_com" />
       <meta name="twitter:image" content="https://blue0x.com/images/blx-og.png" />
       <meta property="og:title" content="Blue0x - Together. We Are the Bank." />
-      <meta property="og:description" content="Blue0x - Together. We Are the Bank." />
+      <meta property="og:description" content="Open-sourced. Decentralized. Secure." />
       <meta property="og:image" content="https://blue0x.com/images/blx-og.png" />
       <meta name="apple-mobile-web-app-title" content="Blue0x" />
     </>
