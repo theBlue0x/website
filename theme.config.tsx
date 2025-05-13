@@ -18,7 +18,7 @@ const config: DocsThemeConfig = {
       openGraph: {
         url: 'https://blue0x.com',
         title: 'Blue0x - Together.  We Are the Bank.',
-        description: 'Free. Open-source. Decentralized. Taking back control of money.',
+        description: 'Free. Open-source. Decentralized.',
         images: [
           {
             url: 'https://blue0x.com/images/blx-og.png',
