@@ -21,7 +21,7 @@ const config: DocsThemeConfig = {
         description: 'Free. Open-source. Decentralized. Taking back control of money.',
         images: [
           {
-            url: 'https://blue0x.com/images/blx-og.webp',
+            url: 'https://blue0x.com/images/blx-og.png',
             width: 1200,
             height: 630,
             alt: 'Blue0x screenshot',
