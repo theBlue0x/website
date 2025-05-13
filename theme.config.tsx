@@ -67,6 +67,7 @@ const config: DocsThemeConfig = {
       <meta name="twitter:site" content="@blue0x_com" />
       <meta property="og:title" content="Blue0x - Together. We Are the Bank." />
       <meta property="og:description" content="Blue0x - Together. We Are the Bank." />
+      <meta property="og:image" content="https://blue0x.com/images/blx-og.png" />
       <meta name="apple-mobile-web-app-title" content="Blue0x" />
     </>
   ),
