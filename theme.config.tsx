@@ -31,8 +31,15 @@ const config: DocsThemeConfig = {
         siteName: 'Blue0x',
       },
       twitter: {
-        handle: '@blue0x_com',
-        cardType: 'summary_large_image',
+        card: 'summary_large_image',
+        site: '@blue0x_com',
+        title: "Blue0x ",
+        description: "Together. We Are the Bank.",
+        creator: '@blue0x_com',
+        images: {
+          url: 'https://blue0x.com/images/blx-og.png',
+          alt: 'Blue0x Wallet',
+        }
       },
     };
   },
