@@ -69,7 +69,7 @@ const config: DocsThemeConfig = {
   head: (
     <>
       <meta httpEquiv="Content-Language" content="en" />
-      <meta name="description" content="Blue0x - Together. We Are the Bank." />
+      <meta name="description" content="Open-sourced. Decentralized. Secure." />
       <meta name="twitter:title" content="Blue0x - Together. We Are the Bank." />
       <meta name="twitter:description" content="Open-sourced. Decentralized. Secure." />
       <meta name="twitter:card" content="summary_large_image" />
