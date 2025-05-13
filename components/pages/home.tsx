@@ -22,8 +22,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col justify-between px-4 pt-16 pb-8 mx-auto w-auto sm:pt-24 md:flex-row lg:px-8 lg:max-w-7xl">
-        <div className="flex flex-col justify-between w-full md:mr-4 md:w-10/12 lg:w-9/12 xl:w-7/12">
+      <div className="flex flex-col justify-between px-4 pt-12 pb-8 mx-auto w-auto sm:pt-24 md:flex-row lg:px-4 lg:max-w-7xl">
+        <div className="flex flex-col justify-between w-full md:ml-6 md:w-10/12 lg:w-9/12 xl:w-7/12">
           <div>
             <h1 className="mx-auto max-w-5xl text-6xl font-extrabold tracking-tighter sm:text-7xl leading-[1.1]">
               <span className="inline-block bg-gradient-to-r from-blue-700 from-10% via-sky-500 via-30% to-[#00ff5e] to-85%  bg-clip-text pr-1 text-transparent ">
@@ -32,11 +32,11 @@ export default function Home() {
                 We Are the Bank.
               </span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg font-medium text-white">
+            <p className="mt-5 max-w-2xl text-lg font-medium text-white">
               Open-sourced. Decentralized. Secure.
               <br />
               </p>
-              <p className="my-5 max-w-2xl text-lg text-gray-400 md:max-w-xl">
+              <p className="my-4 max-w-2xl text-lg/7 text-gray-400 md:max-w-xl tracking-tight">
               Blue0x is a monetary system built on computational trust that eliminates the need for
               intermediaries and returns control of national & personal finance back to the people.
               <br />
@@ -46,7 +46,7 @@ export default function Home() {
             <div className="rounded-md xl:w-auto">
               <Link
                 href="/docs/getting-started/installation"
-                className="flex justify-center items-center py-3 px-8 w-full text-base font-medium text-white no-underline bg-black rounded-md border border-transparent md:py-3 md:px-10 md:text-lg md:leading-6 dark:text-black dark:bg-white betterhover:hover:bg-gray-700 betterhover:dark:hover:bg-gray-300"
+                className="flex justify-center items-center py-3 px-8 w-full text-base font-medium text-white no-underline bg-black rounded-md border border-transparent md:py-3 md:px-8 md:leading-6 dark:text-black dark:bg-white betterhover:hover:bg-gray-700 betterhover:dark:hover:bg-gray-300"
               >
                 Get Started →
               </Link>
@@ -54,7 +54,7 @@ export default function Home() {
             <div className="relative rounded-md xl:w-auto">
               <button
                 onClick={() => onClick('curl -sL https://get.blue0x.com | bash')}
-                className="flex justify-center items-center py-3 px-4 w-full font-mono text-sm font-medium text-gray-600 rounded-md border border-gray-200 md:py-3 md:px-10 md:text-base md:leading-6 dark:text-gray-300 dark:border-gray-700 bg-black/10 betterhover:hover:bg-gray-50 betterhover:dark:hover:bg-gray-900 dark:bg-white/10"
+                className="flex justify-center items-center py-3 px-2 w-full font-mono text-sm font-medium text-gray-600 rounded-md border border-gray-200 md:py-3 md:px-10 md:text-base md:leading-6 dark:text-gray-300 dark:border-gray-700 bg-black/10 betterhover:hover:bg-gray-50 betterhover:dark:hover:bg-gray-900 dark:bg-white/10"
               >
                 curl -sL https://get.blue0x.com | bash
               </button>
@@ -63,10 +63,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="overflow-hidden relative py-24 px-6 border-t sm:py-32 lg:overflow-visible lg:px-0 dark:border-gray-900 isolate">
+      <div className="overflow-hidden relative py-24 px-6 border-t sm:py-32 lg:overflow-visible lg:px-0 border-gray-900 isolate">
         <div className="overflow-hidden absolute inset-0 -z-10">
           <svg
-            className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)] dark:stroke-gray-800"
+            className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)] stroke-gray-800"
             aria-hidden="true"
           >
             <defs>
@@ -81,7 +81,7 @@ export default function Home() {
                 <path d="M100 200V.5M.5 .5H200" fill="none" />
               </pattern>
             </defs>
-            <svg x="50%" y={-1} className="overflow-visible fill-gray-50 dark:fill-gray-900">
+            <svg x="50%" y={-1} className="overflow-visible fill-gray-50 fill-gray-900">
               <path
                 d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
                 strokeWidth={0}
@@ -103,7 +103,7 @@ export default function Home() {
                 <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl light:text-gray-900">
                   Everything you need is already here
                 </h1>
-                <p className="mt-6 text-lg text-gray-400">
+                <p className="mt-6 text-lg/7 text-gray-400 tracking-tight">
                   Blue0x is not just a blockchain. There is an entire decentralized
                   ecosystem, built-in and ready to go! All transactions are executed on-chain and
                   are fully transparent.
@@ -120,7 +120,7 @@ export default function Home() {
           </div>
           <div className="lg:grid lg:grid-cols-2 lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:gap-x-8 lg:px-8 lg:mx-auto lg:w-full lg:max-w-7xl">
             <div className="lg:pr-4">
-              <div className="max-w-xl text-base leading-7 lg:max-w-lg light:text-gray-700">
+              <div className="max-w-xl text-base leading-6 lg:max-w-lg light:text-gray-700">
                 <ul role="list" className="space-y-8 light:text-gray-600">
                   <li className="flex gap-x-3">
                     <WalletIcon
@@ -128,7 +128,7 @@ export default function Home() {
                       aria-hidden="true"
                     />
                     <span>
-                      <strong className="font-semibold dark:text-blue-600 light:text-gray-900">
+                      <strong className="font-semibold text-blue-600">
                         Browser-based Wallet.
                       </strong>{' '}
                       Run on a VPS, a local machine, or your mobile phone! Any device with a browser
@@ -141,7 +141,7 @@ export default function Home() {
                       aria-hidden="true"
                     />
                     <span>
-                      <strong className="font-semibold dark:text-blue-600 light:text-gray-900">
+                      <strong className="font-semibold text-blue-600">
                         Blue0x Marketplace.
                       </strong>{' '}
                       Buy and sell anything, anytime, anywhere on the first decentralized crypto marketplace.
@@ -153,7 +153,7 @@ export default function Home() {
                       aria-hidden="true"
                     />
                     <span>
-                      <strong className="font-semibold dark:text-blue-600 light:text-gray-900">
+                      <strong className="font-semibold text-blue-600">
                         Blue0x Exchange.
                       </strong>{' '}
                       Trade a growing list of international currencies on the first decentralized
@@ -169,10 +169,10 @@ export default function Home() {
 
       <div className="relative from-gray-50 to-gray-200">
         <div className="px-6 pt-4 pb-12 mx-auto lg:max-w-7xl">
-          <h2 className="text-4xl font-extrabold tracking-tight lg:text-center dark:text-white">
+          <h2 className="text-4xl font-extrabold tracking-tight text-center text-white">
             Easy to setup and use
           </h2>
-          <p className="mx-auto mt-4 text-lg font-medium text-gray-400 lg:max-w-3xl lg:text-center">
+          <p className="mx-auto mt-4 text-gray-400 lg:max-w-3xl text-center">
             Whatever your skill set or hardware, we got you covered.
           </p>
           <div className="flex justify-center mt-8 mb-14">
