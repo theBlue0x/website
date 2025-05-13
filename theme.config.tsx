@@ -13,7 +13,7 @@ const config: DocsThemeConfig = {
 
     return {
       titleTemplate: title,
-      description: 'Together. We Are the Bank.',
+      description: 'Open-sourced. Decentralized. Secure',
       canonical: 'https://blue0x.com',
       openGraph: {
         url: 'https://blue0x.com',
