@@ -141,7 +141,7 @@ export default function Home() {
                       aria-hidden="true"
                     />
                     <span>
-                      <strong className="font-semiboldtext-blue-600">
+                      <strong className="font-semibold text-blue-600">
                         Blue0x Marketplace.
                       </strong>{' '}
                       Buy and sell anything, anytime, anywhere on the first decentralized crypto marketplace.
