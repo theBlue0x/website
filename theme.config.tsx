@@ -65,6 +65,7 @@ const config: DocsThemeConfig = {
       <meta name="description" content="Blue0x - Together. We Are the Bank." />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@blue0x_com" />
+      <meta name="twitter:image" content="https://blue0x.com/images/blx-og.png" />
       <meta property="og:title" content="Blue0x - Together. We Are the Bank." />
       <meta property="og:description" content="Blue0x - Together. We Are the Bank." />
       <meta property="og:image" content="https://blue0x.com/images/blx-og.png" />
