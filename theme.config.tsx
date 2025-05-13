@@ -41,7 +41,7 @@ const config: DocsThemeConfig = {
   },
   logo: (
     <div className="flex items-center text-lg">
-      <Image src={logo} alt="Blue0x Logo" />
+      <Image src={logo} width={32} height={33} alt="Blue0x Logo" />
     </div>
   ),
   darkMode: false,
