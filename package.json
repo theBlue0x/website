@@ -4,6 +4,7 @@
   "description": "Nextra docs template",
   "scripts": {
     "dev": "next dev",
+    "lint": "next lint --fix",
     "build": "next build",
     "export": "next export",
     "start": "next start"

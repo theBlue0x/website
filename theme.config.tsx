@@ -43,6 +43,9 @@ const config: DocsThemeConfig = {
       },
     };
   },
+  search: {
+    placeholder: "Search…",
+  },
   nextThemes: {
     forcedTheme: 'dark',
   },

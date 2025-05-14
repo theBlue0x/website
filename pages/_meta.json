@@ -9,6 +9,7 @@
   },
   "docs": {
     "type": "page",
-    "title": "Documentation"
+    "display": "hidden",
+    "title": "Get Started"
   }
 }
