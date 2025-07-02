@@ -166,37 +166,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      <div className="relative from-gray-50 to-gray-200">
-        <div className="mx-auto px-6 pb-12 pt-3 lg:max-w-7xl">
-          <h2 className="text-center text-4xl font-extrabold tracking-tight text-white">
-            Easy to setup and use
-          </h2>
-          <p className="mx-auto mt-3 text-center text-gray-400 lg:max-w-3xl">
-            Whatever your skill set or hardware, we got you covered.
-          </p>
-          <div className="mb-3 mt-8 flex justify-center">
-            <div className="overflow-hidden rounded-md lg:w-7/12">
-              <ReactCompareSlider
-                itemOne={<Image src={before} alt="Exchange image" className="w-full object-cover" />}
-                itemTwo={<Image src={after} alt="Market image" className="w-full object-cover" />}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="mx-auto px-6 lg:max-w-7xl">
-          <div className="flex justify-center">
-            <div className="md:w-3/4 lg:w-7/12">
-              <Link
-                href="/docs/getting-started/installation"
-                className="flex w-full items-center justify-center rounded-md border border-transparent bg-white px-8 py-3 text-lg font-medium text-black no-underline md:px-8 md:py-3 md:leading-6"
-              >
-                Get Started →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
       <Toaster position="bottom-right" />
     </>
   );
