@@ -176,7 +176,7 @@ export default function Home() {
             Whatever your skill set or hardware, we got you covered.
           </p>
           <div className="mb-3 mt-8 flex justify-center">
-            <div className="overflow-hidden rounded-md border border-gray-700 lg:w-7/12">
+            <div className="overflow-hidden rounded-md lg:w-7/12">
               <ReactCompareSlider
                 itemOne={<Image src={before} alt="Exchange image" className="w-full object-cover" />}
                 itemTwo={<Image src={after} alt="Market image" className="w-full object-cover" />}
