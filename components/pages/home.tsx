@@ -53,10 +53,10 @@ export default function Home() {
             </div>
             <div className="relative rounded-md xl:w-auto">
               <button
-                onClick={() => onClick('curl -L https://get.blue0x.com | sudo bash')}
+                onClick={() => onClick('curl -sL https://get.blue0x.com | bash')}
                 className="flex w-full items-center justify-center rounded-md border border-gray-700 bg-white/10 px-2 py-3 font-mono text-sm font-medium text-gray-300 hover:bg-gray-900 md:px-4 md:py-3 md:text-base md:leading-6"
               >
-                curl -L https://get.blue0x.com | sudo bash
+                curl -sL https://get.blue0x.com | bash
               </button>
             </div>
           </div>
