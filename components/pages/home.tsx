@@ -46,7 +46,7 @@ export default function Home() {
             <div className="rounded-md xl:w-auto">
               <Link
                 href="/docs/getting-started/installation"
-                className="flex w-full items-center justify-center rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-black no-underline hover:bg-gray-300 md:px-8 md:py-3 md:leading-6"
+                className="flex w-full items-center justify-center rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-black no-underline md:px-8 md:py-3 md:leading-6"
               >
                 Get Started →
               </Link>
