@@ -173,7 +173,7 @@ export default function Home() {
             Easy to setup and use
           </h2>
           <p className="mx-auto mt-3 text-center text-gray-400 lg:max-w-3xl">
-            Whatever your skill set or hardware, we've got you covered.
+            Whatever your skill set or hardware, we&#39;ve got you covered.
           </p>
           <div className="mb-3 mt-8 flex justify-center">
             <div className="overflow-hidden rounded-md lg:w-7/12">
