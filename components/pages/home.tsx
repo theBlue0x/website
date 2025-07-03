@@ -173,7 +173,7 @@ export default function Home() {
             Easy to setup and use
           </h2>
           <p className="mx-auto mt-3 text-center text-gray-400 lg:max-w-3xl">
-            Whatever your skill set or hardware, we got you covered.
+            Whatever your skill set or hardware, we've got you covered.
           </p>
           <div className="mb-3 mt-8 flex justify-center">
             <div className="overflow-hidden rounded-md lg:w-7/12">
@@ -191,7 +191,7 @@ export default function Home() {
                 href="/docs/getting-started/installation"
                 className="flex w-full items-center justify-center rounded-md border border-transparent bg-white px-8 py-3 text-lg font-medium text-black no-underline md:px-8 md:py-3 md:leading-6"
               >
-                Get Started →
+                Get Started
               </Link>
             </div>
           </div>
