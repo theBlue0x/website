@@ -46,7 +46,7 @@ export default function Home() {
             <div className="rounded-md xl:w-auto">
               <Link
                 href="/docs/getting-started/installation"
-                className="flex w-full items-center justify-center rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-black no-underline md:px-8 md:py-3 md:leading-6"
+                className="flex w-full items-center justify-center rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-black no-underline sm:mb-0.5 md:px-8 md:py-3 md:leading-6"
               >
                 Get Started →
               </Link>
@@ -63,7 +63,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="relative isolate overflow-hidden border-t border-gray-900 px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+      <div className="relative isolate overflow-hidden border-t border-gray-900 px-6 py-4 sm:py-12 md:py-16 lg:py-24 lg:overflow-visible lg:px-0">
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <svg
             className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-800 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
@@ -106,14 +106,14 @@ export default function Home() {
                 <p className="mt-6 text-lg/7 tracking-tight text-gray-400">
                   Blue0x is not just a blockchain. There is an entire decentralized
                   ecosystem, built-in and ready to go! All transactions are executed on-chain and
-                  are fully transparent.
+                  fully transparent.
                 </p>
               </div>
             </div>
           </div>
-          <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+          <div className="lg:mt-20 lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
             <Image
-              className="w-[48rem] max-w-none rounded-xl sm:w-[57rem]"
+              className="w-[48rem] max-w-none rounded-xl sm:w-[57rem] border border-gray-700/60"
               src={screenshot}
               alt="Screenshot of the Blue0x wallet"
             />
@@ -122,39 +122,38 @@ export default function Home() {
             <div className="lg:pr-4">
               <div className="max-w-xl text-base leading-6 lg:max-w-lg">
                 <ul role="list" className="space-y-8">
-                  <li className="flex gap-x-3">
+                  <li className="flex gap-x-3 p-4 rounded-lg border border-gray-700 bg-gray-700/50">
                     <WalletIcon
                       className="mt-1 h-5 w-5 flex-none text-blue-700"
                       aria-hidden="true"
                     />
                     <span>
                       <strong className="font-semibold text-blue-600">
-                        Browser-based Wallet.
+                        Browser-based Wallet -
                       </strong>{' '}
-                      Run on a VPS, a local machine, or your mobile phone! Any device with a browser
-                      can run a Blue0x wallet.
+                      No apps. No extensions.  The Blue0x wallet runs right in your favorite browser.
                     </span>
                   </li>
-                  <li className="flex gap-x-3">
+                  <li className="flex gap-x-3 p-4 rounded-lg border border-gray-700 bg-gray-700/50">
                     <BuildingStorefrontIcon
                       className="mt-1 h-5 w-5 flex-none text-blue-700"
                       aria-hidden="true"
                     />
                     <span>
                       <strong className="font-semibold text-blue-600">
-                        Blue0x Marketplace.
+                        Blue0x Marketplace -
                       </strong>{' '}
-                      Buy and sell anything, anytime, anywhere on the first decentralized crypto marketplace.
+                      Buy and sell anything, anytime, anywhere on the first decentralized marketplace.
                     </span>
                   </li>
-                  <li className="flex gap-x-3">
+                  <li className="flex gap-x-3 p-4 rounded-lg border border-gray-700 bg-gray-700/50">
                     <ArrowTrendingUpIcon
                       className="mt-1 h-5 w-5 flex-none text-blue-700"
                       aria-hidden="true"
                     />
                     <span>
                       <strong className="font-semibold text-blue-600">
-                        Blue0x Exchange.
+                        Blue0x Exchange -
                       </strong>{' '}
                       Trade a growing list of international currencies on the first decentralized
                       foreign exchange.
@@ -168,15 +167,15 @@ export default function Home() {
       </div>
 
       <div className="relative from-gray-50 to-gray-200">
-        <div className="mx-auto px-6 pb-12 pt-3 lg:max-w-7xl">
+        <div className="mx-auto px-6 pb-12 mt-12 lg:max-w-7xl">
           <h2 className="text-center text-4xl font-extrabold tracking-tight text-white">
             Easy to setup and use
           </h2>
           <p className="mx-auto mt-3 text-center text-gray-400 lg:max-w-3xl">
             Whatever your skill set or hardware, we&#39;ve got you covered.
           </p>
-          <div className="mb-3 mt-8 flex justify-center">
-            <div className="overflow-hidden rounded-md lg:w-7/12">
+          <div className="mb-4 mt-10 flex justify-center">
+            <div className="overflow-hidden rounded-lg lg:w-7/12 border border-gray-700/60">
               <ReactCompareSlider
                 itemOne={<Image src={before} alt="Exchange image" className="w-full object-cover" />}
                 itemTwo={<Image src={after} alt="Market image" className="w-full object-cover" />}
@@ -189,9 +188,9 @@ export default function Home() {
             <div className="md:w-3/4 lg:w-7/12">
               <Link
                 href="/docs/getting-started/installation"
-                className="flex w-full items-center justify-center rounded-md border border-transparent bg-white px-8 py-3 text-lg font-medium text-black no-underline md:px-8 md:py-3 md:leading-6"
+                className="flex w-full items-center justify-center rounded-md border border-gray-700/60 bg-gray-800/30 px-8 py-3 text-lg font-medium text-gray-200 no-underline md:px-8 md:py-3 md:leading-6"
               >
-                Get Started
+                Get Started →
               </Link>
             </div>
           </div>

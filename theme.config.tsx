@@ -44,7 +44,7 @@ const config: DocsThemeConfig = {
     };
   },
   search: {
-    placeholder: "Search…",
+    placeholder: "Search documentation…",
   },
   nextThemes: {
     forcedTheme: 'dark',
