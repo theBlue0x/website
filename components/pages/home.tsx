@@ -188,7 +188,7 @@ export default function Home() {
             <div className="w-3/4 lg:w-7/12">
               <Link
                 href="/docs/getting-started/installation"
-                className="flex justify-center items-center py-4 px-8 w-full text-lg font-medium text-gray-200 no-underline rounded-md border md:px-8 md:leading-6 border-gray-700/60 bg-gray-800/30"
+                className="flex justify-center items-center py-4 px-8 w-full text-lg font-medium text-gray-200 no-underline rounded-md border md:px-8 md:leading-6 border-gray-700/60 bg-black"
               >
                 Get Started →
               </Link>
