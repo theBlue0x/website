@@ -59,7 +59,7 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/theBlue0x',
   },
   chat: {
-    link: 'https://discord.gg/QJTgWUAVNu',
+    link: 'https://discord.gg/cQx7jHYTPX',
   },
   docsRepositoryBase: 'https://github.com/theBlue0x/website',
   sidebar: {
