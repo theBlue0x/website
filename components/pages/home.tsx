@@ -117,7 +117,7 @@ export default function Home() {
               alt="Screenshot of the Blue0x wallet"
             />
           </div>
-          <div className="lg:grid lg:grid-cols-2 lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:gap-x-8 lg:px-8 lg:mx-auto lg:w-full lg:max-w-7xl">
+          <div className="lg:grid lg:grid-cols-2 lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:gap-x-8 lg:px-8 lg:mx-auto lg:w-full lg:max-w-7xl xl:max-w-[90rem]">
             <div className="lg:pr-4">
               <div className="max-w-xl text-base leading-6 lg:max-w-lg">
                 <ul role="list" className="space-y-8">
@@ -166,7 +166,7 @@ export default function Home() {
       </div>
 
       <div className="relative from-gray-50 to-gray-200">
-        <div className="px-6 pb-12 mx-auto mt-12 lg:max-w-7xl">
+        <div className="px-6 pb-12 mx-auto mt-12 lg:max-w-7xl xl:max-w-[90rem]">
           <h2 className="text-4xl font-extrabold tracking-tight text-center text-white">
             Easy to setup and use
           </h2>
