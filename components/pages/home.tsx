@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col justify-between px-4 pt-12 pb-8 mx-auto w-auto sm:pt-24 md:flex-row lg:px-4 lg:max-w-7xl">
+      <div className="flex flex-col justify-between px-4 pt-12 pb-8 mx-auto w-auto sm:pt-24 md:flex-row lg:px-4 lg:max-w-7xl xl:max-w-[90rem]">
         <div className="flex flex-col justify-between w-full md:ml-6 md:w-10/12 lg:w-9/12 xl:w-7/12">
           <div>
             <h1 className="mx-auto max-w-5xl text-6xl font-extrabold tracking-tighter sm:text-7xl leading-[1.1]">
