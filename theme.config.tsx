@@ -55,9 +55,6 @@ const config: DocsThemeConfig = {
     </div>
   ),
   darkMode: false,
-  backgroundColor: {
-    dark: '0, 0, 0',
-  },
   project: {
     link: 'https://github.com/theBlue0x',
   },
