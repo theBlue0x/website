@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Force the HTML, body, and Nextra layout wrapper to be pure black */
+html, 
+body, 
+div[class*="nextra-"] {
+  background-color: #000000 !important;
+}
+
+/* Ensure dark mode background utility variables are also pure black */
+:root, [data-theme='dark'] {
+  --nextra-bg: 0, 0, 0; /* RGB for pure black */
+  background-color: #000000 !important;
+}
+
 .dark {
   background-color: #000000;
   color: #ffffff;
